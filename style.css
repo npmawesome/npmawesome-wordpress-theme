@@ -58,7 +58,7 @@ body {
   font-size: 1.1em;
 }
 a {
-  color: #999900;
+  color: #0074a2;
   text-decoration: none;
 }
 #page-header {
@@ -114,13 +114,14 @@ article > header h2 {
 }
 article > header h2.article {
   margin-bottom: 10px;
-  font-size: 2em;
-  font-weight: bold;
+  font-size: 3em;
+  line-height: 85%;
 }
 article > header h2.npm {
-  font-family: Monaco, Courier New, monospace;
-  font-weight: normal;
   font-size: 3em;
+}
+article > header h2.npm:before {
+  content: 'module: ';
 }
 article > header h2 a {
   text-decoration: none;
@@ -196,13 +197,24 @@ article .content .highlight img {
   float: right;
   margin-left: 1em;
 }
+article .content .npm .module > a {
+  font-weight: 600;
+}
+article .content .npm .module .meta {
+  opacity: 0.4;
+  font-weight: 400;
+  font-size: 70%;
+}
+article .content .npm .module .meta a {
+  color: #000;
+}
 article:first-child > header {
   margin-top: 0;
 }
 article pre,
 article code {
   font-family: Monaco, Courier New, monospace;
-  font-size: .95em;
+  font-size: .90em;
   line-height: normal;
 }
 article pre {

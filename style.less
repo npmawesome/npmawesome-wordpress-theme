@@ -70,7 +70,7 @@ body {
 }
 
 a {
-  color: darken(yellow, 20%);
+  color: #0074a2;
   text-decoration: none;
 }
 
@@ -136,14 +136,16 @@ article {
 
       &.article {
         margin-bottom: 10px;
-        font-size: 2em;
-        font-weight: bold;
+        font-size: 3em;
+        line-height: 85%;
       }
 
       &.npm {
-        font-family: @code-font;
-        font-weight: normal;
         font-size: 3em;
+
+        &:before {
+          content: 'module: ';
+        }
       }
 
       a {
@@ -239,6 +241,24 @@ article {
         margin-left: 1em;
       }
     }
+
+    .npm {
+      .module {
+        > a {
+          font-weight: 600;
+        }
+
+        .meta {
+          opacity: 0.4;
+          font-weight: 400;
+          font-size: 70%;
+
+          a {
+            color: #000;
+          }
+        }
+      }
+    }
   }
 
   &:first-child > header {
@@ -247,7 +267,7 @@ article {
 
   pre, code {
     font-family: @code-font;
-    font-size: .95em;
+    font-size: .90em;
     line-height: normal;
   }
 
