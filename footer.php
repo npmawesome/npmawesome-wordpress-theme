@@ -49,8 +49,6 @@
     }());
   </script>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script async src="/scripts/npmawesome.min.js"></script>
   <script async src="//platform.twitter.com/widgets.js"></script>
   <script async src="//yandex.st/share/share.js"></script>
 
