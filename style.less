@@ -1,0 +1,433 @@
+/*
+Theme Name: npmawesome
+Theme URI: http://underscores.me/
+Author: Alex Gorbatchev
+Author URI: http://npmawesome.com
+Description: Description
+Version: 1.0-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: npmawesome
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ npmawesome is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/* Dead Simple Grid (c) 2012 Vladimir Agafonkin */
+
+.col {
+	padding: 0 1.5em;
+}
+.row .row {
+	margin: 0 -1.5em;
+}
+
+.row:before, .row:after {
+	content: "";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+
+@media only screen {
+	.col {
+		float: left;
+		width: 100%;
+
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+}
+
+// -------
+
+.container {
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@title-font: Helvetica, Arial, sans-serif;
+@code-font: Monaco, Courier New, monospace;
+
+body {
+  background: white;
+  border-top: 3px solid black;
+  margin: 0;
+  font-family: @title-font;
+  font-size: 1.1em;
+}
+
+a {
+  color: darken(yellow, 20%);
+  text-decoration: none;
+}
+
+#page-header {
+  background-color: #f0f9f9;
+  margin-bottom: 50px;
+
+  #logo {
+    margin: 0;
+
+    .name {
+      display: block;
+      height: 250px;
+      background: url(/images/npmawesome-logo.svg) 50% 0 no-repeat;
+      overflow: hidden;
+      text-indent: -10000px;
+    }
+
+    .posts-counter {
+      display: none;
+    }
+  }
+
+  #sub-title {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+#fork-me {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url('/images/fork-me.png') no-repeat;
+  width: 141px;
+  height: 141px;
+  text-indent: -500px;
+}
+
+
+article {
+  max-width: 100%;
+  padding-bottom: 50px;
+  border-bottom: 1px solid silver;
+  overflow-x: hidden;
+
+  .social-box {
+    margin-top: 20px;
+    height: 26px;
+  }
+
+  > header {
+    margin: 3em 0 1em 0;
+
+    h2 {
+      display: inline-block;
+      margin: 0;
+
+      &.article {
+        margin-bottom: 10px;
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      &.npm {
+        font-family: @code-font;
+        font-weight: normal;
+        font-size: 3em;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+
+    .meta {
+      color: silver;
+      font-size: 0.8em;
+
+      .comments {
+        margin-left: .5em;
+      }
+
+      .github-stars {
+        font-family: @code-font;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding: .1em .3em;
+        background: silver;
+        color: white;
+        margin-left: .5em;
+        border-radius: 2px;
+        text-shadow: 0px 1px 1px rgba(0,0,0,.3);
+        line-height: normal;
+
+        &:before {
+          content: '★';
+          margin: 0 .2em 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    line-height: 150%;
+
+    h1, h2, h3, h4 {
+      font-weight: bold;
+    }
+
+    ul {
+      li {
+        p:first-of-type {
+          margin: 0;
+        }
+
+        img {
+          display: block;
+          margin: .5em 0;
+          max-width: 200px;
+        }
+      }
+    }
+
+    p.read-more {
+      a:after {
+        font-weight: bold;
+      }
+    }
+
+    table {
+      border-collapse: collapse;
+
+      thead tr {
+        border-bottom: 2px solid gray;
+        background-color: #f0f0f0;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #f0f0f0;
+      }
+    }
+
+    .overflow {
+      overflow-x: scroll;
+    }
+
+    .highlight {
+      padding: .7em 1em;
+      border: 1px solid silver;
+      border-radius: 3px;
+      box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+      background: lightyellow;
+      overflow: hidden;
+      margin-bottom: 1em;
+
+      img {
+        float: right;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  &:first-child > header {
+    margin-top: 0;
+  }
+
+  pre, code {
+    font-family: @code-font;
+    font-size: .95em;
+    line-height: normal;
+  }
+
+  pre {
+    background-color: #333;
+    padding: .8em 1em;
+    color: #fff;
+    border-radius: 2px;
+
+    code {
+      background: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      display: block;
+      line-height: inherit;
+    }
+  }
+
+  code {
+    background: #e0e0e0;
+    padding: 0 0.3em;
+  }
+
+  blockquote {
+    padding: 0 0 0 1em;
+    margin: .5em 0 .5em .5em;
+    quotes: none;
+    border-left: 5px solid #eee;
+    color: gray;
+    position: relative;
+
+    &:before {
+      content: open-quote;
+      position: absolute;
+      font-size: 5em;
+      right: 100%;
+      top: 0;
+      line-height: 1em;
+      color: silver;
+    }
+  }
+
+  ul {
+    padding-left: 1.5em;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+.pagination {
+  ul {
+    list-style-type: none;
+    margin: 2em 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+aside {
+  font-size: 0.8em;
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  .other-posts {
+    > div {
+      display: block;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    a {
+      &.current {
+        color: #000;
+      }
+
+      &.partner {
+        background-position: 100% 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-right: 30px !important;
+
+        &.nodejitsu {
+          background-image: url(/images/nodejitsu.png);
+        }
+      }
+    }
+  }
+
+  .feedburner {
+    margin-bottom: 1em;
+  }
+}
+
+footer {
+  clear: both;
+}
+
+@media only screen and (min-width:0px) and (max-width:767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  aside {
+    display: none;
+  }
+
+  #page-header {
+    padding: 0 1em;
+    margin-bottom: 30px;
+
+    #logo .name {
+      height: 100px;
+    }
+  }
+
+  article {
+    border-bottom: none;
+    padding-bottom: 0;
+
+    > header {
+      h2 {
+        &.article, &.npm {
+          font-size: 1.5em;
+        }
+      }
+
+      .meta .github-stars {
+        display: none;
+      }
+    }
+
+    ul li img {
+      display: none;
+    }
+
+    .content {
+      font-size: .9em;
+    }
+
+    h1, h2, h3, h4 {
+      font-size: 1.2em;
+    }
+
+    code, pre {
+      font-size: .85em;
+    }
+
+    blockquote {
+      padding-left: 0.5em;
+    }
+  }
+}
+
+@media only screen and (min-width: 54em) {
+  .main { width: 66.66% !important; }
+  aside { width: 33.33% !important; }
+}
+
+@media only screen and (min-width: 76em) {
+  .main { width: 75% !important; }
+  aside { width: 25% !important; }
+}
+
+// single colum
+// .main { width: 100% !important; }
+
