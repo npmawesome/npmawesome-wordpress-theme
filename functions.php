@@ -70,6 +70,12 @@ function npmawesome_setup() {
 endif; // npmawesome_setup
 add_action( 'after_setup_theme', 'npmawesome_setup' );
 
+function npmawesome_get_category_count($input = '') {
+  global $wpdb;
+  $SQL = "SELECT $wpdb->term_taxonomy.count FROM $wpdb->terms, $wpdb->term_taxonomy WHERE $wpdb->terms.term_id=$wpdb->term_taxonomy.term_id AND $wpdb->terms.slug='$input'";
+  return $wpdb->get_var($SQL);
+}
+
 /**
  * Register widget area.
  *

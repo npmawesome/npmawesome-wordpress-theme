@@ -27,13 +27,14 @@
         <h1 id="logo">
           <a href="/">
             <span class="name"><?php bloginfo('name'); ?></span>
-            <span class="posts-counter"><?php echo wp_count_posts() ?></span>
           </a>
         </h1>
 
         <div id="sub-title">
-          <a href="http://npmjs.org">npm</a> picks, old and new.
-          <a href="https://github.com/alexgorbatchev/npm-awesome-site">Fork on GitHub to contribute</a>
+          <span class="posts-counter">
+            <?php echo npmawesome_get_category_count('npm'); ?>
+          </span>
+          npm picks, old and new.
         </div>
       </div>
     </div>

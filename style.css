@@ -66,25 +66,21 @@ a {
   margin-bottom: 50px;
 }
 #page-header #logo {
+  display: inline-block;
   margin: 0;
 }
-#page-header #logo .name {
-  display: block;
-  height: 250px;
-  background: url(images/npmawesome-logo.svg) 50% 0 no-repeat;
-  overflow: hidden;
-  text-indent: -10000px;
-}
-#page-header #logo .posts-counter {
-  display: none;
+#page-header #logo .name:before {
+  display: inline-block;
+  height: 37px;
+  background: url(images/npmawesome-logo-badge.svg) 0 0 no-repeat;
+  width: 33px;
+  content: ' ';
 }
 #page-header #sub-title {
-  position: absolute;
-  top: -1000px;
-  left: 0;
+  display: inline-block;
 }
 #page-header a {
-  color: #fff;
+  color: #000;
 }
 #fork-me {
   position: absolute;

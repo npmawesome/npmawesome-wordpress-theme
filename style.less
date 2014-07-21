@@ -79,29 +79,29 @@ a {
   margin-bottom: 50px;
 
   #logo {
+    display: inline-block;
     margin: 0;
 
     .name {
-      display: block;
-      height: 250px;
-      background: url(./images/npmawesome-logo.svg) 50% 0 no-repeat;
-      overflow: hidden;
-      text-indent: -10000px;
-    }
-
-    .posts-counter {
-      display: none;
+      &:before {
+        display: inline-block;
+        height: 37px;
+        background: url(images/npmawesome-logo-badge.svg) 0 0 no-repeat;
+        width: 33px;
+        content: ' ';
+      }
     }
   }
 
   #sub-title {
-    position: absolute;
-    top: -1000px;
-    left: 0;
+    display: inline-block;
+
+    .posts-counter {
+    }
   }
 
   a {
-    color: #fff;
+    color: #000;
   }
 }
 
