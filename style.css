@@ -120,8 +120,8 @@ article > header h2.article {
 article > header h2.npm {
   font-size: 3em;
 }
-article > header h2.npm:before {
-  content: 'module: ';
+article > header h2.npm a:before {
+  content: 'npm install ';
 }
 article > header h2 a {
   text-decoration: none;
@@ -197,15 +197,18 @@ article .content .highlight img {
   float: right;
   margin-left: 1em;
 }
-article .content .npm .module > a {
+article .content .npm.author + br {
+  display: none;
+}
+article .content .npm.module > a {
   font-weight: 600;
 }
-article .content .npm .module .meta {
+article .content .npm.module .meta {
   opacity: 0.4;
   font-weight: 400;
   font-size: 70%;
 }
-article .content .npm .module .meta a {
+article .content .npm.module .meta a {
   color: #000;
 }
 article:first-child > header {

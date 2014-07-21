@@ -11,7 +11,7 @@
 
       <div class="aside col">
         <div class="feedburner">
-          <a href="http://feeds.feedburner.com/npmawesome"><img src="/images/feed.gif"/></a>
+          <a href="http://feeds.feedburner.com/npmawesome"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.gif"/></a>
         </div>
 
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <a class="hide-on-mobile" id="fork-me" href="https://github.com/alexgorbatchev/npm-awesome-site">Fork Me</a>
+  <a class="hide-on-mobile" id="fork-me" href="https://github.com/npmawesome">Fork Me</a>
 
   <script tyle="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

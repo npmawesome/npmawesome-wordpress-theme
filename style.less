@@ -143,8 +143,8 @@ article {
       &.npm {
         font-size: 3em;
 
-        &:before {
-          content: 'module: ';
+        a:before {
+          content: 'npm install ';
         }
       }
 
@@ -243,7 +243,13 @@ article {
     }
 
     .npm {
-      .module {
+      &.author {
+        & + br {
+          display: none;
+        }
+      }
+
+      &.module {
         > a {
           font-weight: 600;
         }
@@ -446,4 +452,3 @@ footer {
 
 // single colum
 // .main { width: 100% !important; }
-
