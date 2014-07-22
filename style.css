@@ -61,13 +61,17 @@ a {
   color: #0074a2;
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+}
 #page-header {
   background-color: #f0f9f9;
-  margin-bottom: 50px;
 }
 #page-header #logo {
   display: inline-block;
   margin: 0;
+  padding: 5px 0 5px 45px;
+  position: relative;
 }
 #page-header #logo .name:before {
   display: inline-block;
@@ -75,6 +79,9 @@ a {
   background: url(images/npmawesome-logo-badge.svg) 0 0 no-repeat;
   width: 33px;
   content: ' ';
+  top: 5px;
+  left: 0;
+  position: absolute;
 }
 #page-header #sub-title {
   display: inline-block;
@@ -101,27 +108,48 @@ article .social-box {
   margin-top: 20px;
   height: 26px;
 }
+article.card {
+  width: 30%;
+  float: left;
+  border: 1px solid silver;
+  height: 200px;
+  margin: 0 1em 1em 0;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 2px;
+}
+article.card > header h2 a {
+  padding: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+article.npm > header h2 {
+  font-size: 2em;
+}
+article.article > header h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
 article > header {
   margin: 3em 0 1em 0;
 }
 article > header h2 {
   display: inline-block;
   margin: 0;
-}
-article > header h2.article {
-  margin-bottom: 10px;
-  font-size: 3em;
-  line-height: 85%;
-}
-article > header h2.npm {
-  font-size: 3em;
-}
-article > header h2.npm a:before {
-  content: 'npm install ';
+  line-height: 90%;
 }
 article > header h2 a {
   text-decoration: none;
   color: #000;
+}
+article > header h2 .edit-link {
+  font-size: 30%;
+  vertical-align: super;
+  font-weight: normal;
+  text-transform: lowercase;
 }
 article > header .meta {
   color: silver;

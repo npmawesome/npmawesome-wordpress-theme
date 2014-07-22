@@ -25,9 +25,7 @@
     <div class="container">
       <div class="row">
         <h1 id="logo">
-          <a href="/">
-            <span class="name"><?php bloginfo('name'); ?></span>
-          </a>
+          <a href="/" class="name"><?php bloginfo('name'); ?></a>
         </h1>
 
         <div id="sub-title">
