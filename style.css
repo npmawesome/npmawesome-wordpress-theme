@@ -130,8 +130,7 @@ article.card header h2 {
   margin: 0 0 .5em 0;
   line-height: 100%;
   display: block;
-  text-align: center;
-  margin: .3em 0;
+  margin: .3em 0 0 0;
 }
 article.card header .npm.author.photo {
   border-radius: 50%;
@@ -150,8 +149,12 @@ article.card header .npm.author.name {
   display: block;
   text-align: center;
 }
+article.card header .npm.author.name:before {
+  content: 'by ';
+}
 article.npm > header h2 {
   font-size: 2em;
+  text-align: center;
 }
 article.article > header h2 {
   font-size: 1.5em;
