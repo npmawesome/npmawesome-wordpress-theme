@@ -29,7 +29,7 @@ a:hover {
 #page-header #logo {
   display: inline-block;
   margin: 0;
-  padding: 5px 0 5px 45px;
+  padding: 0 0 5px 40px;
   position: relative;
 }
 #page-header #logo .name:before {
@@ -50,7 +50,6 @@ a:hover {
 }
 article {
   max-width: 100%;
-  overflow-x: hidden;
 }
 article .social-box {
   margin-top: 20px;
@@ -153,7 +152,7 @@ article header .meta {
 article header .meta .comments {
   margin-left: .5em;
 }
-article header .meta .github-stars {
+article header .github-stars {
   font-family: Monaco, Courier New, monospace;
   display: inline-block;
   width: auto;
@@ -166,7 +165,7 @@ article header .meta .github-stars {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   line-height: normal;
 }
-article header .meta .github-stars:before {
+article header .github-stars:before {
   content: '★';
   margin: 0 .2em 0;
 }
@@ -282,22 +281,37 @@ article ul {
 article strong {
   font-weight: bold;
 }
-.pagination ul {
+.post-navigation {
+  margin: 1em 0;
+}
+.post-navigation .nav-links {
+  overflow: auto;
+}
+.post-navigation .nav-links .nav-previous {
+  float: left;
+}
+.post-navigation .nav-links .nav-next {
+  float: right;
+}
+.navigation {
+  clear: both;
+}
+.navigation ul {
   list-style-type: none;
   margin: 2em 0;
   padding: 0;
   text-align: center;
 }
-.pagination ul li {
+.navigation ul li {
   display: inline-block;
 }
-.pagination ul li + li {
+.navigation ul li + li {
   margin-left: 1em;
 }
 footer {
   clear: both;
 }
-#layout-container {
+.layout-container {
   max-width: 70em;
   margin-left: auto;
   margin-right: auto;
@@ -312,8 +326,6 @@ footer {
 @media only screen {
   #side-nav {
     display: block;
-    float: left;
-    width: 25%;
     box-sizing: border-box;
     font-size: 0.8em;
   }
@@ -355,6 +367,7 @@ footer {
     padding: 0 30px;
   }
   #side-nav {
+    float: left;
     width: 33.33% !important;
   }
   article.card {
@@ -370,9 +383,12 @@ footer {
 }
 @media only screen and (min-width: 76em) {
   #main-content {
+    float: left;
     width: 75% !important;
+    padding: 0 30px;
   }
   #side-nav {
+    float: left;
     width: 25% !important;
   }
   article.card {
@@ -396,15 +412,12 @@ footer {
   #side-nav {
     display: none !important;
   }
-  #page-header {
-    padding: 0 1em;
-    margin-bottom: 30px;
-  }
-  #page-header #logo .name {
-    height: 100px;
+  #page-header .sub-title {
+    display: none;
   }
   article.card {
     width: 100%;
+    margin: 0 .5em 1em .5em;
   }
   article {
     border-bottom: none;
@@ -414,7 +427,7 @@ footer {
   article header h2.npm {
     font-size: 1.5em;
   }
-  article header .meta .github-stars {
+  article header .github-stars {
     display: none;
   }
   article ul li img {
