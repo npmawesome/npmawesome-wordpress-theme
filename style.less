@@ -419,6 +419,10 @@ article {
       color: #fff;
     }
 
+    .current {
+      font-weight: bold;
+    }
+
     & + li {
       margin-left: 5px;
     }
@@ -442,6 +446,26 @@ footer {
 
 #side-nav {
   display: none;
+
+  .menu {
+    display: none;
+  }
+
+  aside {
+    .widget-title {
+      margin-bottom: .2em;
+    }
+
+    ul {
+      margin: 0 0 .5rem 1.5rem;
+      padding: 0;
+      line-height: .8rem;
+
+      li {
+        margin-bottom: .4rem;
+      }
+    }
+  }
 }
 
 @media only screen {
