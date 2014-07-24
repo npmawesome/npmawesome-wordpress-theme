@@ -361,10 +361,10 @@ footer {
     width: 50%;
     float: left;
   }
-  article.card:nth-child(1n + 1) .box {
+  article.card:nth-child(2n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  article.card:nth-child(2n + 1) .box {
+  article.card:nth-child(2n + 2) .box {
     margin: 0 0 1em .5em;
   }
 }
@@ -379,13 +379,13 @@ footer {
     width: 33%;
     float: left;
   }
-  article.card:nth-child(1n + 1) .box {
+  article.card:nth-child(3n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  article.card:nth-child(2n + 1) .box {
+  article.card:nth-child(3n + 2) .box {
     margin: 0 .5em 1em .5em;
   }
-  article.card:nth-child(3n + 1) .box {
+  article.card:nth-child(3n + 3) .box {
     margin: 0 0 1em .5em;
   }
 }
