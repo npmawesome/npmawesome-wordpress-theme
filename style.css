@@ -48,15 +48,6 @@ a:hover {
 #page-header a {
   color: #000;
 }
-#fork-me {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: url('images/fork-me.png') no-repeat;
-  width: 141px;
-  height: 141px;
-  text-indent: -500px;
-}
 article {
   max-width: 100%;
   overflow-x: hidden;
@@ -96,7 +87,6 @@ article.card header {
   margin: 0;
 }
 article.card header h2 {
-  margin: 0 0 .5em 0;
   line-height: 100%;
   display: block;
   margin: .3em 0 0 0;
@@ -135,40 +125,40 @@ article.card .post-image {
 article.card .post-image img {
   display: none;
 }
-article.npm > header h2 {
+article.npm header h2 {
   font-size: 2em;
   text-align: center;
 }
-article.article > header h2 {
+article.article header h2 {
   font-size: 1.5em;
   font-weight: 600;
 }
-article > header {
+article header {
   margin: 3em 0 1em 0;
 }
-article > header a {
+article header a {
   text-decoration: none;
   color: #000;
 }
-article > header h2 {
+article header h2 {
   margin: 0;
   line-height: 90%;
 }
-article > header h2 .edit-link {
+article header h2 .edit-link {
   font-size: 10px;
   vertical-align: super;
   font-weight: normal;
   text-transform: lowercase;
   line-height: 0;
 }
-article > header .meta {
+article header .meta {
   color: silver;
   font-size: 0.8em;
 }
-article > header .meta .comments {
+article header .meta .comments {
   margin-left: .5em;
 }
-article > header .meta .github-stars {
+article header .meta .github-stars {
   font-family: Monaco, Courier New, monospace;
   display: inline-block;
   width: auto;
@@ -181,7 +171,7 @@ article > header .meta .github-stars {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   line-height: normal;
 }
-article > header .meta .github-stars:before {
+article header .meta .github-stars:before {
   content: '★';
   margin: 0 .2em 0;
 }
@@ -245,7 +235,7 @@ article .content .npm.module .meta {
 article .content .npm.module .meta a {
   color: #000;
 }
-article:first-child > header {
+article:first-child header {
   margin-top: 0;
 }
 article pre,
@@ -309,31 +299,6 @@ article strong {
 .pagination ul li + li {
   margin-left: 1em;
 }
-aside {
-  font-size: 0.8em;
-}
-aside h4 {
-  margin-bottom: 0;
-}
-aside .other-posts > div {
-  display: block;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-aside .other-posts a.current {
-  color: #000;
-}
-aside .other-posts a.partner {
-  background-position: 100% 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-right: 30px !important;
-}
-aside .feedburner {
-  margin-bottom: 1em;
-}
 footer {
   clear: both;
 }
@@ -355,14 +320,37 @@ footer {
     float: left;
     width: 25%;
     box-sizing: border-box;
+    font-size: 0.8em;
   }
-  #side-nav :before,
-  #side-nav :after {
+  #side-nav:before,
+  #side-nav:after {
     content: "";
     display: table;
   }
-  #side-nav :after {
+  #side-nav:after {
     clear: both;
+  }
+  #side-nav h4 {
+    margin-bottom: 0;
+  }
+  #side-nav .other-posts > div {
+    display: block;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #side-nav .other-posts a.current {
+    color: #000;
+  }
+  #side-nav .other-posts a.partner {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 30px !important;
+  }
+  #side-nav .feedburner {
+    margin-bottom: 1em;
   }
 }
 @media only screen and (min-width: 54em) {
@@ -401,11 +389,11 @@ footer {
     border-bottom: none;
     padding-bottom: 0;
   }
-  article > header h2.article,
-  article > header h2.npm {
+  article header h2.article,
+  article header h2.npm {
     font-size: 1.5em;
   }
-  article > header .meta .github-stars {
+  article header .meta .github-stars {
     display: none;
   }
   article ul li img {
