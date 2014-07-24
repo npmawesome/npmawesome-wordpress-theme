@@ -56,14 +56,9 @@ article .social-box {
   margin-top: 20px;
   height: 26px;
 }
-article.card {
-  width: 33%;
-  float: left;
-}
 article.card .box {
   border: 1px solid silver;
   height: 250px;
-  margin: 0 1em 1em 0;
   box-sizing: border-box;
   position: relative;
   border-radius: 2px;
@@ -362,6 +357,16 @@ footer {
   #side-nav {
     width: 33.33% !important;
   }
+  article.card {
+    width: 50%;
+    float: left;
+  }
+  article.card:nth-child(1n + 1) .box {
+    margin: 0 .5em 1em 0;
+  }
+  article.card:nth-child(2n + 1) .box {
+    margin: 0 0 1em .5em;
+  }
 }
 @media only screen and (min-width: 76em) {
   #main-content {
@@ -369,6 +374,19 @@ footer {
   }
   #side-nav {
     width: 25% !important;
+  }
+  article.card {
+    width: 33%;
+    float: left;
+  }
+  article.card:nth-child(1n + 1) .box {
+    margin: 0 .5em 1em 0;
+  }
+  article.card:nth-child(2n + 1) .box {
+    margin: 0 .5em 1em .5em;
+  }
+  article.card:nth-child(3n + 1) .box {
+    margin: 0 0 1em .5em;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
@@ -384,6 +402,9 @@ footer {
   }
   #page-header #logo .name {
     height: 100px;
+  }
+  article.card {
+    width: 100%;
   }
   article {
     border-bottom: none;
