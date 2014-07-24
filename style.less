@@ -67,6 +67,10 @@ a:hover {
 }
 
 .card {
+  a {
+    color: #000;
+  }
+
   &.npm {
     header {
       h2 {
@@ -401,21 +405,17 @@ article {
 
   li {
     display: inline-block;
-    display: inline-block;
-    box-sizing: border-box;
-    height: 28px;
-    background: silver;
-    border-radius: 3px;
-    min-width: 28px;
-    color: #fff;
+    line-height: 160%;
 
-    a {
+    a, .current {
       display: inline-block;
       box-sizing: border-box;
       text-align: center;
-      padding: 1px 6px;
-      height: 100%;
-      width: 100%;
+      color: #fff;
+      height: 28px;
+      background: silver;
+      border-radius: 3px;
+      min-width: 28px;
       color: #fff;
     }
 

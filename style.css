@@ -49,6 +49,9 @@ a:hover {
 #page-header a {
   color: #000;
 }
+.card a {
+  color: #000;
+}
 .card.npm header h2 {
   font-size: 2em;
   text-align: center;
@@ -307,20 +310,17 @@ article strong {
 }
 .pagination li {
   display: inline-block;
+  line-height: 160%;
+}
+.pagination li a,
+.pagination li .current {
+  display: inline-block;
   box-sizing: border-box;
+  text-align: center;
   height: 28px;
   background: silver;
   border-radius: 3px;
   min-width: 28px;
-  color: #fff;
-}
-.pagination li a {
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  padding: 1px 6px;
-  height: 100%;
-  width: 100%;
   color: #fff;
 }
 .pagination li + li {
