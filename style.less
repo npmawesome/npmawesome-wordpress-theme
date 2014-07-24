@@ -401,6 +401,12 @@ article {
 
   li {
     display: inline-block;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 28px;
+    background: silver;
+    border-radius: 3px;
+    min-width: 28px;
     color: #fff;
 
     a {
@@ -408,10 +414,8 @@ article {
       box-sizing: border-box;
       text-align: center;
       padding: 1px 6px;
-      height: 28px;
-      background: silver;
-      border-radius: 3px;
-      min-width: 28px;
+      height: 100%;
+      width: 100%;
       color: #fff;
     }
 
@@ -500,7 +504,7 @@ footer {
     width: 33.33% !important;
   }
 
-  article.card {
+  .card {
     width: 50%;
     float: left;
 
@@ -518,7 +522,7 @@ footer {
   #main-content {
     float: left;
     width: 75% !important;
-    padding: 0 30px;
+    padding-right: 30px;
   }
 
   #side-nav {
@@ -526,7 +530,7 @@ footer {
     width: 25% !important;
   }
 
-  article.card {
+  .card {
     width: 33%;
     float: left;
 
@@ -559,7 +563,7 @@ footer {
     }
   }
 
-  article.card {
+  .card {
     width: 100%;
     margin: 0 .5em 1em .5em;
   }

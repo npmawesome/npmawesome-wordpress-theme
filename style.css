@@ -307,6 +307,11 @@ article strong {
 }
 .pagination li {
   display: inline-block;
+  box-sizing: border-box;
+  height: 28px;
+  background: silver;
+  border-radius: 3px;
+  min-width: 28px;
   color: #fff;
 }
 .pagination li a {
@@ -314,10 +319,8 @@ article strong {
   box-sizing: border-box;
   text-align: center;
   padding: 1px 6px;
-  height: 28px;
-  background: silver;
-  border-radius: 3px;
-  min-width: 28px;
+  height: 100%;
+  width: 100%;
   color: #fff;
 }
 .pagination li + li {
@@ -385,14 +388,14 @@ footer {
     float: left;
     width: 33.33% !important;
   }
-  article.card {
+  .card {
     width: 50%;
     float: left;
   }
-  article.card:nth-child(2n + 1) .box {
+  .card:nth-child(2n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  article.card:nth-child(2n + 2) .box {
+  .card:nth-child(2n + 2) .box {
     margin: 0 0 1em .5em;
   }
 }
@@ -400,23 +403,23 @@ footer {
   #main-content {
     float: left;
     width: 75% !important;
-    padding: 0 30px;
+    padding-right: 30px;
   }
   #side-nav {
     float: left;
     width: 25% !important;
   }
-  article.card {
+  .card {
     width: 33%;
     float: left;
   }
-  article.card:nth-child(3n + 1) .box {
+  .card:nth-child(3n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  article.card:nth-child(3n + 2) .box {
+  .card:nth-child(3n + 2) .box {
     margin: 0 .5em 1em .5em;
   }
-  article.card:nth-child(3n + 3) .box {
+  .card:nth-child(3n + 3) .box {
     margin: 0 0 1em .5em;
   }
 }
@@ -430,7 +433,7 @@ footer {
   #page-header .sub-title {
     display: none;
   }
-  article.card {
+  .card {
     width: 100%;
     margin: 0 .5em 1em .5em;
   }
