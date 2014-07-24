@@ -4,9 +4,13 @@
  *
  * @package npmawesome
  */
-?>
 
-<?php
+$is_module = in_category('npm');
+
+$classes = array(
+  $is_module ? 'npm' : 'article'
+);
+
 function the_social() {
   ?>
   <div class="social-box">
@@ -14,32 +18,31 @@ function the_social() {
   </div>
   <?php
 }
-
-$is_module = in_category('npm');
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
   <header>
-    <h2 class="<?php echo $is_module ? 'npm' : 'article' ?>">
+    <h2>
       <a href="<?php the_permalink(); ?>">
         <?php the_title(); ?>
       </a>
+      <?php
+        if($is_module) {
+          echo '<div class="github-stars" data-github-repo="'.get_field('module_github').'"></div>';
+        }
+
+        edit_post_link('Edit', '<span class="edit-link">', '</span>');
+      ?>
     </h2>
 
     <div class="meta">
       <?php npmawesome_posted_on(); ?>
 
-      <?php if($is_module): ?>
-        <div class="github-stars" data-github-repo="<?php the_field('module_github'); ?>"></div>
-      <?php endif; ?>
-
       <?php
-      $category_list = get_the_category_list( ', ' );
-      $tag_list = get_the_tag_list( '', ', ' );
-      printf('This entry was tagged %2$s.', $tag_list);
+        $category_list = get_the_category_list( ', ' );
+        $tag_list = get_the_tag_list( '', ', ' );
+        printf('This entry was tagged %2$s.', $tag_list);
       ?>
-
-      <?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
     </div>
 
     <?php the_social(); ?>

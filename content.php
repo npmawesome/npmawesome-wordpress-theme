@@ -11,22 +11,31 @@ $classes = array(
   'card',
   $is_module ? 'npm' : 'article'
 );
+
+if(has_post_thumbnail()) { 
+  $post_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+  $post_image_url = $post_image_url[0];
+  $post_image = "<div class='post-image' style='background-image: url($post_image_url);'><img src='$post_image_url'/></div>";
+  array_push($classes, 'with-post-image');
+} 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-  <header>
-    <?php
-      $avatar_url = npm_get_github_field('avatar_url');
-
-      if(!empty($avatar_url)): ?>
-        <span class="npm author photo"><img src="<?php echo $avatar_url; ?>"/></span>
-      <?php endif;
-    ?>
-    <h2>
-      <a href="<?php the_permalink(); ?>" class="permalink"><?php the_title(); ?></a>
-      <?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
-    </h2>
-    <?php echo npm_get_author(); ?>
-    <?php // the_tags('<span class="meta-tags">', ', ', '</span>'); ?>
-  </header>
-</article>
+<div id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+  <div class="box">
+    <header>
+      <?php
+        if($is_module) {
+          $avatar_url = npm_get_github_field('avatar_url');
+          echo "<span class='npm author photo'><img src='$avatar_url'/></span>";
+        }
+      ?>
+      <h2>
+        <a href="<?php the_permalink(); ?>" class="permalink"><?php the_title(); ?></a>
+        <?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
+      </h2>
+      <?php echo npm_get_author(); ?>
+      <?php // the_tags('<span class="meta-tags">', ', ', '</span>'); ?>
+    </header>
+    <?php echo $post_image; ?>
+  </div>
+</div>

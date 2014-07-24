@@ -5,6 +5,8 @@
  * @package npmawesome
  */
 
+add_theme_support('post-thumbnails');
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
