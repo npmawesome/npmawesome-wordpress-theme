@@ -8,6 +8,7 @@
       h2 {
         font-size: 2em;
         text-align: center;
+        white-space: nowrap;
       }
     }
   }
@@ -15,7 +16,7 @@
   &.article {
     header {
       h2 {
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: 600;
       }
     }
@@ -27,10 +28,21 @@
     box-sizing: border-box;
     position: relative;
     border-radius: 2px;
+    overflow: hidden;
 
     &:hover {
       border-color: #000;
     }
+  }
+
+  .edit-link {
+    font-size: 10px;
+    font-weight: normal;
+    text-transform: lowercase;
+    line-height: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   &.with-post-image {
@@ -55,7 +67,6 @@
     margin: 0;
 
     h2 {
-      line-height: 100%;
       display: block;
       margin: .3em 0 0 0;
     }

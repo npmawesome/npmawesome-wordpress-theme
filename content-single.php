@@ -30,8 +30,6 @@ function the_social() {
         if($is_module) {
           echo '<div class="github-stars" data-github-repo="'.get_field('module_github').'"></div>';
         }
-
-        edit_post_link('Edit', '<span class="edit-link">', '</span>');
       ?>
     </h2>
 
