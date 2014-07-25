@@ -8,7 +8,7 @@
 $is_module = in_category('npm');
 
 $classes = array(
-  'card',
+  'landing-page-card',
   $is_module ? 'npm' : 'article'
 );
 ?>

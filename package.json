@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "",
-    "pretest": "lessc style.less style.css"
+    "pretest": "lessc styles/index.less style.css"
   },
   "repository": {
     "type": "git",

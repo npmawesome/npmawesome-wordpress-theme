@@ -1,11 +1,13 @@
 /*
-Theme Name: npmawesome
-Theme URI: http://underscores.me/
-Author: Alex Gorbatchev
-Author URI: http://npmawesome.com
-Description: Description
-Text Domain: npmawesome
-Domain Path: /languages/
+Theme Name       : npmawesome
+Theme URI        : http://underscores.me/
+Author           : Alex Gorbatchev
+Author URI       : http://npmawesome.com
+Description      : Description
+Text Domain      : npmawesome
+Domain Path      : /languages/
+GitHub Theme URI : npmawesome/npmawesome-wordpress-theme
+GitHub Branch    : master
 Tags:
 */
 body {
@@ -21,6 +23,13 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+h2 .edit-link {
+  font-size: 10px;
+  vertical-align: super;
+  font-weight: normal;
+  text-transform: lowercase;
+  line-height: 0;
 }
 #page-header {
   background-color: #f0f9f9;
@@ -49,34 +58,39 @@ a:hover {
 #page-header a {
   color: #000;
 }
-.card a {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  #page-header .sub-title {
+    display: none;
+  }
+}
+.landing-page-card a {
   color: #000;
 }
-.card.npm header h2 {
+.landing-page-card.npm header h2 {
   font-size: 2em;
   text-align: center;
 }
-.card.article header h2 {
+.landing-page-card.article header h2 {
   font-size: 1.5em;
   font-weight: 600;
 }
-.card .box {
+.landing-page-card .box {
   border: 1px solid silver;
   height: 250px;
   box-sizing: border-box;
   position: relative;
   border-radius: 2px;
 }
-.card .box:hover {
+.landing-page-card .box:hover {
   border-color: #000;
 }
-.card.with-post-image header {
+.landing-page-card.with-post-image header {
   margin-top: 125px;
 }
-.card.category-npm header {
+.landing-page-card.category-npm header {
   padding-top: 30px;
 }
-.card header {
+.landing-page-card header {
   font-size: 1em;
   position: absolute;
   left: 15px;
@@ -85,12 +99,12 @@ a:hover {
   right: 15px;
   margin: 0;
 }
-.card header h2 {
+.landing-page-card header h2 {
   line-height: 100%;
   display: block;
   margin: .3em 0 0 0;
 }
-.card header .npm.author.photo {
+.landing-page-card header .npm.author.photo {
   border-radius: 50%;
   overflow: hidden;
   display: block;
@@ -99,18 +113,18 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
 }
-.card header .npm.author.photo img {
+.landing-page-card header .npm.author.photo img {
   width: 100%;
   height: 100%;
 }
-.card header .npm.author.name {
+.landing-page-card header .npm.author.name {
   display: block;
   text-align: center;
 }
-.card header .npm.author.name:before {
+.landing-page-card header .npm.author.name:before {
   content: 'by ';
 }
-.card .post-image {
+.landing-page-card .post-image {
   position: absolute;
   left: 1px;
   top: 1px;
@@ -121,15 +135,41 @@ a:hover {
   background-size: cover;
   background-position: center;
 }
-.card .post-image img {
+.landing-page-card .post-image img {
   display: none;
 }
-h2 .edit-link {
-  font-size: 10px;
-  vertical-align: super;
-  font-weight: normal;
-  text-transform: lowercase;
-  line-height: 0;
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .landing-page-card {
+    width: 100%;
+    margin: 0 .5em 1em .5em;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .landing-page-card {
+    width: 50%;
+    float: left;
+  }
+  .landing-page-card:nth-child(2n + 1) .box {
+    margin: 0 .5em 1em 0;
+  }
+  .landing-page-card:nth-child(2n + 2) .box {
+    margin: 0 0 1em .5em;
+  }
+}
+@media only screen and (min-width: 76em) {
+  .landing-page-card {
+    width: 33%;
+    float: left;
+  }
+  .landing-page-card:nth-child(3n + 1) .box {
+    margin: 0 .5em 1em 0;
+  }
+  .landing-page-card:nth-child(3n + 2) .box {
+    margin: 0 .5em 1em .5em;
+  }
+  .landing-page-card:nth-child(3n + 3) .box {
+    margin: 0 0 1em .5em;
+  }
 }
 article {
   max-width: 100%;
@@ -288,6 +328,38 @@ article ul {
 article strong {
   font-weight: bold;
 }
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  article {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  article header h2.article,
+  article header h2.npm {
+    font-size: 1.5em;
+  }
+  article header .github-stars {
+    display: none;
+  }
+  article ul li img {
+    display: none;
+  }
+  article .content {
+    font-size: .9em;
+  }
+  article h1,
+  article h2,
+  article h3,
+  article h4 {
+    font-size: 1.2em;
+  }
+  article code,
+  article pre {
+    font-size: .85em;
+  }
+  article blockquote {
+    padding-left: 0.5em;
+  }
+}
 .post-navigation {
   margin: 1em 0;
 }
@@ -341,8 +413,40 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
+@media only screen and (min-width: 54em) and (max-width: 76em) {
+  #main-content {
+    float: left;
+    width: 66.66% !important;
+    padding-right: 30px;
+  }
+  #side-nav {
+    float: left;
+    width: 33.33% !important;
+  }
+}
+@media only screen and (min-width: 76em) {
+  #main-content {
+    float: left;
+    width: 75% !important;
+    padding-right: 30px;
+  }
+  #side-nav {
+    float: left;
+    width: 25% !important;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  #side-nav {
+    display: none !important;
+  }
+}
 #side-nav {
   display: none;
+  box-sizing: border-box;
+  font-size: 0.8em;
 }
 #side-nav .menu {
   display: none;
@@ -358,130 +462,38 @@ footer {
 #side-nav aside ul li {
   margin-bottom: .4rem;
 }
+#side-nav:before,
+#side-nav:after {
+  content: "";
+  display: table;
+}
+#side-nav:after {
+  clear: both;
+}
+#side-nav h4 {
+  margin-bottom: 0;
+}
+#side-nav .other-posts > div {
+  display: block;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#side-nav .other-posts a.current {
+  color: #000;
+}
+#side-nav .other-posts a.partner {
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 30px !important;
+}
+#side-nav .feedburner {
+  margin-bottom: 1em;
+}
 @media only screen {
   #side-nav {
     display: block;
-    box-sizing: border-box;
-    font-size: 0.8em;
-  }
-  #side-nav:before,
-  #side-nav:after {
-    content: "";
-    display: table;
-  }
-  #side-nav:after {
-    clear: both;
-  }
-  #side-nav h4 {
-    margin-bottom: 0;
-  }
-  #side-nav .other-posts > div {
-    display: block;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  #side-nav .other-posts a.current {
-    color: #000;
-  }
-  #side-nav .other-posts a.partner {
-    background-position: 100% 0;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-right: 30px !important;
-  }
-  #side-nav .feedburner {
-    margin-bottom: 1em;
-  }
-}
-@media only screen and (min-width: 54em) and (max-width: 76em) {
-  #main-content {
-    float: left;
-    width: 66.66% !important;
-    padding-right: 30px;
-  }
-  #side-nav {
-    float: left;
-    width: 33.33% !important;
-  }
-  .card {
-    width: 50%;
-    float: left;
-  }
-  .card:nth-child(2n + 1) .box {
-    margin: 0 .5em 1em 0;
-  }
-  .card:nth-child(2n + 2) .box {
-    margin: 0 0 1em .5em;
-  }
-}
-@media only screen and (min-width: 76em) {
-  #main-content {
-    float: left;
-    width: 75% !important;
-    padding-right: 30px;
-  }
-  #side-nav {
-    float: left;
-    width: 25% !important;
-  }
-  .card {
-    width: 33%;
-    float: left;
-  }
-  .card:nth-child(3n + 1) .box {
-    margin: 0 .5em 1em 0;
-  }
-  .card:nth-child(3n + 2) .box {
-    margin: 0 .5em 1em .5em;
-  }
-  .card:nth-child(3n + 3) .box {
-    margin: 0 0 1em .5em;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-  .hide-on-mobile {
-    display: none !important;
-  }
-  #side-nav {
-    display: none !important;
-  }
-  #page-header .sub-title {
-    display: none;
-  }
-  .card {
-    width: 100%;
-    margin: 0 .5em 1em .5em;
-  }
-  article {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  article header h2.article,
-  article header h2.npm {
-    font-size: 1.5em;
-  }
-  article header .github-stars {
-    display: none;
-  }
-  article ul li img {
-    display: none;
-  }
-  article .content {
-    font-size: .9em;
-  }
-  article h1,
-  article h2,
-  article h3,
-  article h4 {
-    font-size: 1.2em;
-  }
-  article code,
-  article pre {
-    font-size: .85em;
-  }
-  article blockquote {
-    padding-left: 0.5em;
   }
 }

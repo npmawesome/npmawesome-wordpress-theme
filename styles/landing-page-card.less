@@ -1,0 +1,109 @@
+.landing-page-card {
+  a {
+    color: #000;
+  }
+
+  &.npm {
+    header {
+      h2 {
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+  }
+
+  &.article {
+    header {
+      h2 {
+        font-size: 1.5em;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .box {
+    border: 1px solid silver;
+    height: 250px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 2px;
+
+    &:hover {
+      border-color: #000;
+    }
+  }
+
+  &.with-post-image {
+    header {
+      margin-top: 125px;
+    }
+  }
+
+  &.category-npm {
+    header {
+      padding-top: 30px;
+    }
+  }
+
+  header {
+    font-size: 1em;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    bottom: 15px;
+    right: 15px;
+    margin: 0;
+
+    h2 {
+      line-height: 100%;
+      display: block;
+      margin: .3em 0 0 0;
+    }
+
+    .npm.author {
+      &.photo {
+        border-radius: 50%;
+        overflow: hidden;
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &.name {
+        display: block;
+        text-align: center;
+
+        &:before {
+          content: 'by ';
+        }
+      }
+    }
+  }
+
+  .post-image {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    height: 130px;
+    right: 1px;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@import 'phone/landing-page-card';
+@import 'tablet/landing-page-card';
+@import 'desktop/landing-page-card';

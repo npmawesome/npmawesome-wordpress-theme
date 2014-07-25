@@ -1,0 +1,45 @@
+/*
+Theme Name       : npmawesome
+Author           : Alex Gorbatchev
+Author URI       : http://npmawesome.com
+Text Domain      : npmawesome
+Domain Path      : /languages/
+GitHub Theme URI : npmawesome/npmawesome-wordpress-theme
+GitHub Branch    : master
+*/
+
+@body-font: "Source Sans Pro", Helvetica, Arial, sans-serif;
+@code-font: Monaco, Courier New, monospace;
+
+body {
+  background: white;
+  border-top: 3px solid black;
+  margin: 0;
+  font-family: @body-font;
+  font-size: 1.1em;
+}
+
+a {
+  color: #0074a2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 .edit-link {
+  font-size: 10px;
+  vertical-align: super;
+  font-weight: normal;
+  text-transform: lowercase;
+  line-height: 0;
+}
+
+@import 'page-header';
+@import 'landing-page-card';
+@import 'article';
+@import 'post-navigation';
+@import 'pagination';
+@import 'layout';
+@import 'side-nav';
