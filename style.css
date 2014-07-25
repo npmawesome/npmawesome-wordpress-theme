@@ -1,14 +1,11 @@
 /*
 Theme Name       : npmawesome
-Theme URI        : http://underscores.me/
 Author           : Alex Gorbatchev
 Author URI       : http://npmawesome.com
-Description      : Description
 Text Domain      : npmawesome
 Domain Path      : /languages/
 GitHub Theme URI : npmawesome/npmawesome-wordpress-theme
 GitHub Branch    : master
-Tags:
 */
 body {
   background: white;
@@ -144,7 +141,7 @@ h2 .edit-link {
     margin: 0 .5em 1em .5em;
   }
 }
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (min-width: 54em) and (max-width: 76em) {
   .landing-page-card {
     width: 50%;
     float: left;
