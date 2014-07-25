@@ -16,3 +16,75 @@
     }
   }
 }
+
+// for desktop AND tablet
+@media only screen and (min-width: 54) {
+  &.npm {
+    header {
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
+  .box {
+    border: 1px solid silver;
+    height: 250px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &:hover {
+      border-color: #000;
+    }
+  }
+
+  &.with-post-image {
+    header {
+      margin-top: 125px;
+    }
+  }
+
+  &.category-npm {
+    header {
+      padding-top: 30px;
+    }
+  }
+
+  .post-image {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    height: 130px;
+    right: 1px;
+    z-index: 1;
+
+    img {
+      display: none;
+    }
+  }
+
+  header {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    bottom: 15px;
+    right: 15px;
+
+    h2 {
+      margin: .3em 0 0 0;
+    }
+
+    .npm.author {
+      &.photo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &.name {
+        text-align: center;
+      }
+    }
+  }
+}
