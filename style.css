@@ -73,9 +73,6 @@ a:hover {
   font-weight: normal;
   text-transform: lowercase;
   line-height: 0;
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 .landing-page-card .post-image {
   z-index: 1;
@@ -130,6 +127,11 @@ a:hover {
     top: 0;
     height: 80px;
     width: 80px;
+  }
+  .landing-page-card .edit-link {
+    position: absolute;
+    right: 15px;
+    top: 0;
   }
 }
 @media only screen and (min-width: 54em) and (max-width: 76em) {
@@ -221,6 +223,11 @@ a:hover {
   }
   .landing-page-card header .npm.author.name {
     text-align: center;
+  }
+  .landing-page-card .edit-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 article {
