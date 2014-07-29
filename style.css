@@ -107,7 +107,7 @@ a:hover {
 .landing-page-card header .npm.author.name:before {
   content: 'by ';
 }
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .landing-page-card {
     width: 100%;
     margin: 0 0 1em 0;
@@ -472,7 +472,7 @@ footer {
   width: 100%;
   box-sizing: border-box;
 }
-@media only screen and (min-width: 54em) and (max-width: 76em) {
+@media only screen and (min-width: 768px) and (max-width: 76em) {
   #main-content {
     float: left;
     width: 66.66% !important;
@@ -494,7 +494,7 @@ footer {
     width: 25% !important;
   }
 }
-@media only screen and (min-width: 54) {
+@media only screen and (min-width: 768px) {
   .layout-container {
     padding: 0 1em;
   }
