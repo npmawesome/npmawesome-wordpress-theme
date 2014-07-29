@@ -51,6 +51,7 @@ a:hover {
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   #page-header {
     padding: 0 1em;
+    margin: 0;
   }
   #page-header #sub-title {
     display: none;
@@ -135,12 +136,26 @@ a:hover {
   .landing-page-card {
     width: 50%;
     float: left;
+    margin-bottom: 15px;
   }
   .landing-page-card:nth-child(2n + 1) .box {
     margin: 0 .5em 1em 0;
   }
   .landing-page-card:nth-child(2n + 2) .box {
     margin: 0 0 1em .5em;
+  }
+  .landing-page-card header {
+    font-size: 1em;
+    margin: 0;
+  }
+  .landing-page-card header h2 {
+    display: block;
+    margin: 0;
+  }
+  .landing-page-card header .npm.author.photo {
+    position: absolute;
+    left: 15px;
+    top: 0px;
   }
 }
 @media only screen and (min-width: 76em) {
@@ -445,7 +460,6 @@ footer {
   max-width: 70em;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1em;
 }
 #main-content {
   width: 100%;
@@ -471,6 +485,11 @@ footer {
   #side-nav {
     float: left;
     width: 25% !important;
+  }
+}
+@media only screen and (min-width: 54) {
+  .layout-container {
+    padding: 0 1em;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
