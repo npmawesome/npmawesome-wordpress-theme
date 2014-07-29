@@ -19,8 +19,6 @@
     </div>
   </div>
 
-  <a class="hide-on-mobile" id="fork-me" href="https://github.com/npmawesome">Fork Me</a>
-
   <script tyle="text/javascript">
     // http://drawingablank.me/blog/fix-your-bounce-rate.html
     // https://news.ycombinator.com/item?id=5766883
