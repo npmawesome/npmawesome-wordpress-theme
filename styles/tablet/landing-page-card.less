@@ -2,6 +2,7 @@
   .landing-page-card {
     width: 50%;
     float: left;
+    margin-bottom: 15px;
 
     &:nth-child(2n + 1) .box {
       margin: 0 .5em 1em 0;
@@ -9,6 +10,24 @@
 
     &:nth-child(2n + 2) .box {
       margin: 0 0 1em .5em;
+    }
+
+    header {
+      font-size: 1em;
+      margin: 0;
+
+      h2 {
+        display: block;
+        margin: 0;
+      }
+
+      .npm.author {
+        &.photo {
+          position: absolute;
+          left: 15px;
+          top: 0px;
+        }
+      }
     }
   }
 }
