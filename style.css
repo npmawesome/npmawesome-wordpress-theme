@@ -51,7 +51,7 @@ a:hover {
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   #page-header {
     padding: 0 1em;
-    margin: 0;
+    margin-bottom: 15px;
   }
   #page-header #sub-title {
     display: none;
@@ -244,6 +244,9 @@ article header a {
   text-decoration: none;
   color: #000;
 }
+article header a:hover {
+  text-decoration: none;
+}
 article header h2 {
   margin: 0 0 1rem 0;
   line-height: 90%;
@@ -283,6 +286,17 @@ article .content h2,
 article .content h3,
 article .content h4 {
   font-weight: bold;
+}
+article .content h2 {
+  border-bottom: 1px solid silver;
+  padding-bottom: 10px;
+  font-size: 1.7em;
+}
+article .content h3 {
+  font-size: 1.5em;
+}
+article .content h4 {
+  font-size: 1.3em;
 }
 article .content ul li p:first-of-type {
   margin: 0;
@@ -500,6 +514,10 @@ footer {
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
+  #main-content {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
   .hide-on-mobile {
     display: none !important;
   }
