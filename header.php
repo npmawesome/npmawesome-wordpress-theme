@@ -31,7 +31,6 @@
         <span class="posts-counter">
           <?php echo npmawesome_get_category_count('npm'); ?>
         </span>
-        npm picks, old and new.
       </div>
     </div>
   </header>
