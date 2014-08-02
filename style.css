@@ -63,128 +63,128 @@ a:hover {
     display: none;
   }
 }
-.landing-page-card a {
+.article-card a {
   color: #000;
 }
-.landing-page-card.npm header h2 {
+.article-card.npm header h2 {
   font-size: 2em;
   white-space: nowrap;
 }
-.landing-page-card.article header h2 {
+.article-card.article header h2 {
   font-size: 1em;
   font-weight: 600;
 }
-.landing-page-card .edit-link {
+.article-card .edit-link {
   font-size: 10px;
   font-weight: normal;
   text-transform: lowercase;
   line-height: 0;
 }
-.landing-page-card .post-image {
+.article-card .post-image {
   z-index: 1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.landing-page-card .post-image img {
+.article-card .post-image img {
   display: none;
 }
-.landing-page-card header {
+.article-card header {
   font-size: 1em;
   margin: 0;
 }
-.landing-page-card header h2 {
+.article-card header h2 {
   display: block;
 }
-.landing-page-card header .npm.author.photo {
+.article-card header .npm.author.photo {
   overflow: hidden;
   display: block;
   width: 80px;
   height: 80px;
 }
-.landing-page-card header .npm.author.photo img {
+.article-card header .npm.author.photo img {
   width: 100%;
   height: 100%;
 }
-.landing-page-card header .npm.author.name {
+.article-card header .npm.author.name {
   display: block;
 }
-.landing-page-card header .npm.author.name:before {
+.article-card header .npm.author.name:before {
   content: 'by ';
 }
 @media only screen and (max-width: 767px) {
-  .landing-page-card {
+  .article-card {
     width: 100%;
     margin: 0 0 1em 0;
   }
-  .landing-page-card .box {
+  .article-card .box {
     border-bottom: 1px solid silver;
     box-sizing: border-box;
     position: relative;
     min-height: 95px;
   }
-  .landing-page-card .post-image {
+  .article-card .post-image {
     position: absolute;
     left: 15px;
     top: 0;
     height: 80px;
     width: 80px;
   }
-  .landing-page-card .edit-link {
+  .article-card .edit-link {
     position: absolute;
     right: 15px;
     top: 0;
   }
-  .landing-page-card header {
+  .article-card header {
     padding-left: 110px;
     font-size: 1em;
     margin: 0;
   }
-  .landing-page-card header h2 {
+  .article-card header h2 {
     display: block;
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .landing-page-card header .npm.author.photo {
+  .article-card header .npm.author.photo {
     position: absolute;
     left: 15px;
     top: 0px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 76em) {
-  .landing-page-card {
+  .article-card {
     width: 50%;
     float: left;
     margin-bottom: 15px;
   }
-  .landing-page-card:nth-child(2n + 1) .box {
+  .article-card:nth-child(2n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  .landing-page-card:nth-child(2n + 2) .box {
+  .article-card:nth-child(2n + 2) .box {
     margin: 0 0 1em .5em;
   }
 }
 @media only screen and (min-width: 76em) {
-  .landing-page-card {
+  .article-card {
     width: 33%;
     float: left;
   }
-  .landing-page-card:nth-child(3n + 1) .box {
+  .article-card:nth-child(3n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  .landing-page-card:nth-child(3n + 2) .box {
+  .article-card:nth-child(3n + 2) .box {
     margin: 0 .5em 1em .5em;
   }
-  .landing-page-card:nth-child(3n + 3) .box {
+  .article-card:nth-child(3n + 3) .box {
     margin: 0 0 1em .5em;
   }
 }
 @media only screen and (min-width: 768px) {
-  .landing-page-card.npm header h2 {
+  .article-card.npm header h2 {
     text-align: center;
   }
-  .landing-page-card .box {
+  .article-card .box {
     border: 1px solid silver;
     height: 250px;
     box-sizing: border-box;
@@ -192,16 +192,16 @@ a:hover {
     border-radius: 2px;
     overflow: hidden;
   }
-  .landing-page-card .box:hover {
+  .article-card .box:hover {
     border-color: #000;
   }
-  .landing-page-card.with-post-image header {
+  .article-card.with-post-image header {
     margin-top: 125px;
   }
-  .landing-page-card.category-npm header {
+  .article-card.category-npm header {
     padding-top: 30px;
   }
-  .landing-page-card .post-image {
+  .article-card .post-image {
     position: absolute;
     left: 1px;
     top: 1px;
@@ -209,28 +209,28 @@ a:hover {
     right: 1px;
     z-index: 1;
   }
-  .landing-page-card .post-image img {
+  .article-card .post-image img {
     display: none;
   }
-  .landing-page-card header {
+  .article-card header {
     position: absolute;
     left: 15px;
     top: 15px;
     bottom: 15px;
     right: 15px;
   }
-  .landing-page-card header h2 {
+  .article-card header h2 {
     margin: .3em 0 0 0;
   }
-  .landing-page-card header .npm.author.photo {
+  .article-card header .npm.author.photo {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
   }
-  .landing-page-card header .npm.author.name {
+  .article-card header .npm.author.name {
     text-align: center;
   }
-  .landing-page-card .edit-link {
+  .article-card .edit-link {
     position: absolute;
     right: 15px;
     bottom: 15px;
