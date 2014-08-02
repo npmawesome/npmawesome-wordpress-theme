@@ -6,6 +6,7 @@
  */
 
 $is_module = in_category('npm');
+$post_image = null;
 
 $classes = array(
   'article-card',

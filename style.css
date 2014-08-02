@@ -153,30 +153,30 @@ a:hover {
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 76em) {
-  .article-card {
+  #main-content .article-card {
     width: 50%;
     float: left;
     margin-bottom: 15px;
   }
-  .article-card:nth-child(2n + 1) .box {
+  #main-content .article-card:nth-child(2n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  .article-card:nth-child(2n + 2) .box {
+  #main-content .article-card:nth-child(2n + 2) .box {
     margin: 0 0 1em .5em;
   }
 }
 @media only screen and (min-width: 76em) {
-  .article-card {
+  #main-content .article-card {
     width: 33%;
     float: left;
   }
-  .article-card:nth-child(3n + 1) .box {
+  #main-content .article-card:nth-child(3n + 1) .box {
     margin: 0 .5em 1em 0;
   }
-  .article-card:nth-child(3n + 2) .box {
+  #main-content .article-card:nth-child(3n + 2) .box {
     margin: 0 .5em 1em .5em;
   }
-  .article-card:nth-child(3n + 3) .box {
+  #main-content .article-card:nth-child(3n + 3) .box {
     margin: 0 0 1em .5em;
   }
 }
