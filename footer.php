@@ -22,7 +22,9 @@
   <script tyle="text/javascript">
     // http://drawingablank.me/blog/fix-your-bounce-rate.html
     // https://news.ycombinator.com/item?id=5766883
-    setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
+    if (window.ga) {
+      setTimeout(function() { ga('send', 'event', 'read', 'auto generated'); }, 5000);
+    }
   </script>
 
   <script async src="//platform.twitter.com/widgets.js"></script>
