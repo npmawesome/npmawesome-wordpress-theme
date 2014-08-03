@@ -10,10 +10,6 @@
     </div>
 
     <div id="side-nav">
-      <div class="feedburner">
-        <a href="http://feeds.feedburner.com/npmawesome"><img src="<?php echo get_template_directory_uri(); ?>/images/feed.gif"/></a>
-      </div>
-
       <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
       <?php get_sidebar(); ?>
     </div>
