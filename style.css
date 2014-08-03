@@ -571,21 +571,43 @@ footer {
 #side-nav h4 {
   margin-bottom: 0;
 }
-#side-nav .other-posts > div {
+#side-nav .article-card {
+  width: 100%;
+  margin: 0 0 1em 0;
+}
+#side-nav .article-card .box {
+  border-bottom: 1px solid silver;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 95px;
+}
+#side-nav .article-card .post-image {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  height: 80px;
+  width: 80px;
+}
+#side-nav .article-card .edit-link {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+#side-nav .article-card header {
+  padding-left: 110px;
+  font-size: 1em;
+  margin: 0;
+}
+#side-nav .article-card header h2 {
   display: block;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  white-space: nowrap;
+  margin: 0;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
-#side-nav .other-posts a.current {
-  color: #000;
-}
-#side-nav .other-posts a.partner {
-  background-position: 100% 0;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-right: 30px !important;
+#side-nav .article-card header .npm.author.photo {
+  position: absolute;
+  left: 15px;
+  top: 0px;
 }
 #side-nav .feedburner {
   margin-bottom: 1em;
