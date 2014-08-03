@@ -333,6 +333,9 @@ article .content .overflow {
 article .content .npm.author + br {
   display: none;
 }
+article .content .npm.author.photo {
+  display: none;
+}
 article .content .npm.author.photo img {
   margin-right: 0;
   border-radius: 5px;
