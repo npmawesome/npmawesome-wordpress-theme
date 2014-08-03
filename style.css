@@ -181,10 +181,10 @@ a:hover {
   }
 }
 @media only screen and (min-width: 768px) {
-  .article-card.npm header h2 {
+  #main-content .article-card.npm header h2 {
     text-align: center;
   }
-  .article-card .box {
+  #main-content .article-card .box {
     border: 1px solid silver;
     height: 250px;
     box-sizing: border-box;
@@ -192,16 +192,16 @@ a:hover {
     border-radius: 2px;
     overflow: hidden;
   }
-  .article-card .box:hover {
+  #main-content .article-card .box:hover {
     border-color: #000;
   }
-  .article-card.with-post-image header {
+  #main-content .article-card.with-post-image header {
     margin-top: 125px;
   }
-  .article-card.category-npm header {
+  #main-content .article-card.category-npm header {
     padding-top: 30px;
   }
-  .article-card .post-image {
+  #main-content .article-card .post-image {
     position: absolute;
     left: 1px;
     top: 1px;
@@ -209,28 +209,28 @@ a:hover {
     right: 1px;
     z-index: 1;
   }
-  .article-card .post-image img {
+  #main-content .article-card .post-image img {
     display: none;
   }
-  .article-card header {
+  #main-content .article-card header {
     position: absolute;
     left: 15px;
     top: 15px;
     bottom: 15px;
     right: 15px;
   }
-  .article-card header h2 {
+  #main-content .article-card header h2 {
     margin: .3em 0 0 0;
   }
-  .article-card header .npm.author.photo {
+  #main-content .article-card header .npm.author.photo {
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
   }
-  .article-card header .npm.author.name {
+  #main-content .article-card header .npm.author.name {
     text-align: center;
   }
-  .article-card .edit-link {
+  #main-content .article-card .edit-link {
     position: absolute;
     right: 15px;
     bottom: 15px;
@@ -574,6 +574,9 @@ footer {
 #side-nav h4 {
   margin-bottom: 0;
 }
+#side-nav .feedburner {
+  margin-bottom: 1em;
+}
 #side-nav .article-card {
   width: 100%;
   margin: 0 0 1em 0;
@@ -611,9 +614,6 @@ footer {
   position: absolute;
   left: 15px;
   top: 0px;
-}
-#side-nav .feedburner {
-  margin-bottom: 1em;
 }
 @media only screen {
   #side-nav {
