@@ -54,7 +54,7 @@ a:hover {
 #page-header a {
   color: #000;
 }
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   #page-header {
     padding: 0 1em;
     margin-bottom: 15px;
@@ -413,7 +413,7 @@ article .content .highlight img {
   float: right;
   margin-left: 1em;
 }
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   article {
     border-bottom: none;
     padding-bottom: 0;
@@ -530,7 +530,7 @@ footer {
     padding: 0 1em;
   }
 }
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   #main-content {
     box-sizing: border-box;
   }

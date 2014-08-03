@@ -1,4 +1,4 @@
-@media only screen and (min-width: 76em) {
+.media-desktop({
   #main-content .article-card {
     width: 33%;
     float: left;
@@ -15,10 +15,9 @@
       margin: 0 0 1em .5em;
     }
   }
-}
+});
 
-// for desktop AND tablet
-@media only screen and (min-width: 768px) {
+.media-desktop-and-tablet({
   .article-card {
     &.npm {
       header {
@@ -96,4 +95,4 @@
       bottom: 15px;
     }
   }
-}
+});
