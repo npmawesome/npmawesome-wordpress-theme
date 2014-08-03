@@ -1,0 +1,23 @@
+.media-desktop(@rules) {
+  @media only screen and (min-width: 76em) {
+    @rules();
+  }
+}
+
+.media-desktop-and-tablet(@rules) {
+  @media only screen and (min-width: 768px) {
+    @rules();
+  }
+}
+
+.media-tablet(@rules) {
+  @media only screen and (min-width: 768px) and (max-width: 76em) {
+    @rules();
+  }
+}
+
+.media-phone(@rules) {
+  @media only screen and (max-width: 767px) {
+    @rules();
+  }
+}
