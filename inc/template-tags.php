@@ -84,9 +84,9 @@ function npmawesome_posted_on() {
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
   );
 
-  $byline = 
+  $byline =
     '<span class="author vcard">'.
-      '<img src="http://www.gravatar.com/avatar/'.md5(get_the_author_meta('user_email')).')"/>'.
+      '<img src="http://www.gravatar.com/avatar/'.md5(get_the_author_meta('user_email')).'"/>'.
       '<a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'.
     '</span>'
     ;
