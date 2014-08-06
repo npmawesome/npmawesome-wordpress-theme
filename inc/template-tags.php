@@ -80,17 +80,18 @@ function npmawesome_posted_on() {
   );
 
   $posted_on = sprintf(
-    _x( 'Posted on %s', 'post date', 'npmawesome' ),
+    _x( 'on %s', 'post date', 'npmawesome' ),
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
   );
 
-  $byline = sprintf(
-    _x( 'by %s', 'post author', 'npmawesome' ),
-    '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-  );
+  $byline = 
+    '<span class="author vcard">'.
+      '<img src="http://www.gravatar.com/avatar/'.md5(get_the_author_meta('user_email')).')"/>'.
+      '<a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'.
+    '</span>'
+    ;
 
-  echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
-
+  echo '<span class="byline">' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>';
 }
 endif;
 
