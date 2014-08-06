@@ -264,6 +264,12 @@ article header .meta {
 article header .meta .comments {
   margin-left: .5em;
 }
+article header .meta .author img {
+  vertical-align: middle;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: .5em;
+}
 article header .github-stars {
   font-family: Monaco, Courier New, monospace;
   display: inline-block;
