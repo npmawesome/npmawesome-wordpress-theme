@@ -84,10 +84,20 @@ function npmawesome_posted_on() {
     '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
   );
 
+  if(function_exists('coauthors_posts_links')) {
+    $authors = get_coauthors();
+    $author = $authors[0];
+  }
+
+  if(empty($author)) {
+    global $authordata;
+    $author = $authordata;
+  }
+
   $byline =
     '<span class="author vcard">'.
-      '<img src="http://www.gravatar.com/avatar/'.md5(get_the_author_meta('user_email')).'"/>'.
-      '<a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a>'.
+      '<img src="http://www.gravatar.com/avatar/'.md5($author->user_email).'"/>'.
+      '<a class="url fn n" href="'.esc_url(get_author_posts_url($author->ID, $author->user_nicename)).'">'.esc_html($author->display_name).'</a>'.
     '</span>'
     ;
 
