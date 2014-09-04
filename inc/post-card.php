@@ -5,7 +5,7 @@
  * @package npmawesome
  */
 
-$is_module = in_category('npm');
+$is_module = in_category('npm') && !in_category('article');
 $post_image = null;
 
 $classes = array(
@@ -33,7 +33,7 @@ if(has_post_thumbnail()) {
       <h2>
         <a href="<?php the_permalink(); ?>" class="permalink"><?php the_title(); ?></a>
       </h2>
-      <?php echo npm_get_author(); ?>
+      <?php if($is_module) echo npm_get_author(); ?>
       <?php // the_tags('<span class="meta-tags">', ', ', '</span>'); ?>
     </header>
     <?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
