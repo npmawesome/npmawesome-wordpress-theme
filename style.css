@@ -198,7 +198,7 @@ a:hover {
   #main-content .article-card.with-post-image header {
     margin-top: 125px;
   }
-  #main-content .article-card.category-npm header {
+  #main-content .article-card.category-npm:not(.category-article) header {
     padding-top: 30px;
   }
   #main-content .article-card .post-image {
