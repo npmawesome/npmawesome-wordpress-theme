@@ -10,6 +10,16 @@ GitHub Branch    : master
 
 @import 'media';
 
+// bootstrap
+@import "../bower_components/bootstrap/less/variables.less";
+@import "../bower_components/bootstrap/less/mixins.less";
+@import "../bower_components/bootstrap/less/scaffolding.less";
+@import "../bower_components/bootstrap/less/type.less";
+@import "../bower_components/bootstrap/less/code.less";
+@import "../bower_components/bootstrap/less/pagination.less";
+@import "../bower_components/bootstrap/less/grid.less";
+@import "../bower_components/bootstrap/less/responsive-utilities.less";
+
 @body-font: "Source Sans Pro", Helvetica, Arial, sans-serif;
 @code-font: Monaco, Courier New, monospace;
 
@@ -18,7 +28,6 @@ body {
   border-top: 3px solid black;
   margin: 0;
   font-family: @body-font;
-  font-size: 1.1em;
 }
 
 a {
@@ -30,10 +39,14 @@ a:hover {
   text-decoration: underline;
 }
 
+.pagination {
+  display: block;
+  clear: both;
+  overflow: auto;
+}
+
 @import 'page-header';
 @import 'article-card';
 @import 'article';
 @import 'post-navigation';
-@import 'pagination';
-@import 'layout';
 @import 'side-nav';
