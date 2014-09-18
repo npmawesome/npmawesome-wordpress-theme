@@ -1,4 +1,4 @@
-.post-navigation {
+.PostNavigation {
   margin: 1em 0;
   overflow: auto;
 
@@ -10,3 +10,19 @@
     content: '← ';
   }
 }
+
+.media-phone({
+  .PostNavigation {
+    .next, .previous {
+      overflow: auto;
+
+      a {
+        width: 100%;
+      }
+    }
+
+    .previous a {
+      margin-bottom: 1em;
+    }
+  }
+});

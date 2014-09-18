@@ -31,8 +31,7 @@ if ( ! function_exists( 'npmawesome_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function npmawesome_setup() {
-  require get_template_directory() . '/widgets/index.php';
-  require get_template_directory() . '/shortcodes/index.php';
+  require get_template_directory().'/shortcodes/index.php';
 
   /*
    * Make theme available for translation.
@@ -120,6 +119,7 @@ function npmawesome_scripts() {
   wp_enqueue_style( 'npmawesome-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,400italic' );
   wp_enqueue_script( 'npmawesome-jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js', array(), '2.0.3', true );
 
+  npmawesome_enqueue_script('/bower_components/RRSSB/js/rrssb.js');
   npmawesome_enqueue_script('/js/navigation.js');
   npmawesome_enqueue_script('/js/skip-link-focus-fix.js');
   npmawesome_enqueue_script('/js/numeral.js');

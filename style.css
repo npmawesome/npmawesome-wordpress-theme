@@ -1524,10 +1524,10 @@ body {
   background: white;
   border-top: 3px solid black;
   margin: 0;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
 a {
-  color: #0074a2;
+  color: darkorange;
   text-decoration: none;
 }
 a:hover {
@@ -1577,14 +1577,150 @@ a:hover {
 #page-header a {
   color: #000;
 }
-@media only screen and (max-width: 991px) {
-  #page-header {
-    padding: 0 1em;
-    margin-bottom: 15px;
-  }
-  #page-header #sub-title {
-    display: none;
-  }
+.Post .rrssb-buttons li a {
+  padding-top: 10px;
+}
+.Post-header {
+  margin: 0 0 2em 0;
+}
+.Post-header a {
+  text-decoration: none;
+  color: #000;
+}
+.Post-header a:hover {
+  text-decoration: none;
+}
+.Post-moduleHeader {
+  text-align: center;
+  padding: 2em;
+}
+.Post-moduleHeader a {
+  color: inherit;
+}
+.Post-moduleHeader .NpmAuthor-photo {
+  display: block;
+}
+.Post-moduleHeader .NpmAuthor-photo img {
+  width: 100px;
+  border-radius: 50%;
+}
+.Post-moduleHeader .NpmAuthor-name:before {
+  content: 'by ';
+}
+.Post-title {
+  margin: 0 0 1rem 0;
+  font-size: 4em;
+}
+.Post-meta {
+  color: silver;
+  margin-bottom: 2em;
+}
+.Post-meta .ByLine img {
+  vertical-align: middle;
+  width: 45px;
+  border-radius: 50%;
+  margin-right: .5em;
+}
+.Post-content {
+  line-height: 150%;
+  font-size: 120%;
+}
+.Post-content h1,
+.Post-content h2,
+.Post-content h3,
+.Post-content h4 {
+  font-weight: bold;
+}
+.Post-content h2 {
+  border-bottom: 1px solid silver;
+  padding-bottom: 10px;
+  font-size: 1.7em;
+}
+.Post-content h3 {
+  font-size: 1.5em;
+}
+.Post-content h4 {
+  font-size: 1.3em;
+}
+.Post-content iframe {
+  max-width: 100%;
+}
+.Post-content ul li p:first-of-type {
+  margin: 0;
+}
+.Post-content ul li img {
+  display: block;
+  margin: .5em 0;
+  max-width: 200px;
+}
+.Post-content p.read-more a:after {
+  font-weight: bold;
+}
+.Post-content table {
+  border-collapse: collapse;
+}
+.Post-content table thead tr {
+  border-bottom: 2px solid gray;
+  background-color: #f0f0f0;
+}
+.Post-content table tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+.Post-content .overflow {
+  overflow-x: scroll;
+}
+.Post-content .NpmAuthor-photo {
+  display: none;
+}
+.Post-content .NpmModule-meta {
+  opacity: 0.4;
+  font-weight: 400;
+  font-size: 70%;
+}
+.Post-content .NpmModule-meta a {
+  color: #000;
+}
+.Post-content code {
+  border-radius: 2px;
+}
+.Post-content pre,
+.Post-content code {
+  font-family: Monaco, Courier New, monospace;
+  font-size: .90em;
+  line-height: normal;
+}
+.Post-content pre {
+  background-color: #333;
+  padding: .8em 1em;
+  color: #fff;
+  border-radius: 2px;
+}
+.Post-content pre code {
+  background: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+  line-height: inherit;
+}
+.Post-content code {
+  background: #e0e0e0;
+  padding: 0 0.3em;
+  color: inherit;
+}
+.Post-content blockquote {
+  color: gray;
+}
+.Post-content ul {
+  padding-left: 1.5em;
+}
+.Post-content strong {
+  font-weight: bold;
+}
+.SocialButtons {
+  margin-bottom: 2em;
 }
 .PostCard-box {
   position: relative;
@@ -1599,13 +1735,6 @@ a:hover {
 }
 .PostCard-header .ByLine img {
   display: none;
-  width: 20px;
-  border-radius: 50%;
-  vertical-align: bottom;
-  margin-top: 5px;
-}
-.PostCard-header .ByLine a:before {
-  content: ' ';
 }
 .PostCard-title {
   font-size: 3em;
@@ -1643,167 +1772,45 @@ a:hover {
 .PostCard-author:before {
   content: 'by ';
 }
-article {
-  max-width: 100%;
+@media only screen and (max-width: 991px) {
+  .PostCard-image {
+    width: 60px;
+    height: 60px;
+  }
+  .PostCard-header {
+    margin-left: 70px;
+  }
+  .PostCard-title {
+    font-size: 1.5em;
+  }
+  .PostCard--module .PostCard-title {
+    font-size: 2em;
+  }
 }
-article .social-box {
-  margin-top: 20px;
-  height: 26px;
+.PostNavigation {
+  margin: 1em 0;
+  overflow: auto;
 }
-article header {
-  margin: 3em 0 1em 0;
+.PostNavigation .next a:after {
+  content: ' →';
 }
-article header a {
-  text-decoration: none;
-  color: #000;
+.PostNavigation .previous a:before {
+  content: '← ';
 }
-article header a:hover {
-  text-decoration: none;
+@media only screen and (max-width: 991px) {
+  .PostNavigation .next,
+  .PostNavigation .previous {
+    overflow: auto;
+  }
+  .PostNavigation .next a,
+  .PostNavigation .previous a {
+    width: 100%;
+  }
+  .PostNavigation .previous a {
+    margin-bottom: 1em;
+  }
 }
-article header h2 {
-  margin: 0 0 1rem 0;
-  font-size: 3em;
-}
-article header .meta {
-  color: silver;
-}
-article header .meta .comments {
-  margin-left: .5em;
-}
-article header .meta .author img {
-  vertical-align: middle;
-  width: 45px;
-  border-radius: 50%;
-  margin-right: .5em;
-}
-article header .github-stars {
-  font-family: Monaco, Courier New, monospace;
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: .1em .3em;
-  background: silver;
-  color: white;
-  margin-right: .5em;
-  vertical-align: super;
-  border-radius: 2px;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  line-height: normal;
-  font-size: 1rem;
-}
-article header .github-stars:before {
-  content: '★';
-  margin: 0 .2em 0;
-}
-article .content {
-  line-height: 150%;
-  font-size: 120%;
-}
-article .content h1,
-article .content h2,
-article .content h3,
-article .content h4 {
-  font-weight: bold;
-}
-article .content h2 {
-  border-bottom: 1px solid silver;
-  padding-bottom: 10px;
-  font-size: 1.7em;
-}
-article .content h3 {
-  font-size: 1.5em;
-}
-article .content h4 {
-  font-size: 1.3em;
-}
-article .content iframe {
-  max-width: 100%;
-}
-article .content ul li p:first-of-type {
-  margin: 0;
-}
-article .content ul li img {
-  display: block;
-  margin: .5em 0;
-  max-width: 200px;
-}
-article .content p.read-more a:after {
-  font-weight: bold;
-}
-article .content table {
-  border-collapse: collapse;
-}
-article .content table thead tr {
-  border-bottom: 2px solid gray;
-  background-color: #f0f0f0;
-}
-article .content table tbody tr:nth-child(even) {
-  background-color: #f0f0f0;
-}
-article .content .overflow {
-  overflow-x: scroll;
-}
-article .content .npm.author + br {
-  display: none;
-}
-article .content .npm.author.photo {
-  display: none;
-}
-article .content .npm.author.photo img {
-  margin-right: 0;
-  border-radius: 5px;
-}
-article .content .npm.module > a {
-  font-weight: 600;
-}
-article .content .npm.module .meta {
-  opacity: 0.4;
-  font-weight: 400;
-  font-size: 70%;
-}
-article .content .npm.module .meta a {
-  color: #000;
-}
-article:first-child header {
-  margin-top: 0;
-}
-article pre,
-article code {
-  font-family: Monaco, Courier New, monospace;
-  font-size: .90em;
-  line-height: normal;
-}
-article pre {
-  background-color: #333;
-  padding: .8em 1em;
-  color: #fff;
-  border-radius: 2px;
-}
-article pre code {
-  background: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  display: block;
-  line-height: inherit;
-}
-article code {
-  background: #e0e0e0;
-  padding: 0 0.3em;
-  color: inherit;
-}
-article blockquote {
-  color: gray;
-}
-article ul {
-  padding-left: 1.5em;
-}
-article strong {
-  font-weight: bold;
-}
-article .content .highlight {
+.Partner {
   padding: .7em 1em;
   border: 1px solid silver;
   border-radius: 3px;
@@ -1812,88 +1819,33 @@ article .content .highlight {
   overflow: hidden;
   margin-bottom: 1em;
 }
-article .content .highlight img {
+.Partner img {
   float: right;
   margin-left: 1em;
 }
-@media only screen and (max-width: 991px) {
-  article {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  article.article header h2 {
-    font-size: 1.5em;
-  }
-  article.article .github-stars {
-    display: none;
-  }
-  article ul li img {
-    display: none;
-  }
-  article .content {
-    font-size: .9em;
-  }
-  article h1,
-  article h2,
-  article h3,
-  article h4 {
-    font-size: 1.2em;
-  }
-  article code,
-  article pre {
-    font-size: .85em;
-  }
-  article blockquote {
-    padding-left: 0.5em;
-  }
-  article,
-  #disqus_thread,
-  .post-navigation {
-    padding: 0 15px;
-  }
+.RecentPosts {
+  margin: 2em 0 5em 0;
 }
-.post-navigation {
-  margin: 1em 0;
-  overflow: auto;
+.GitHub-stars {
+  font-family: Monaco, Courier New, monospace;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: .2em .3em .1em;
+  background: silver;
+  color: white;
+  margin-right: .5em;
+  vertical-align: super;
+  border-radius: 2px;
+  line-height: normal;
+  font-size: 1rem;
 }
-.post-navigation .next a:after {
-  content: ' →';
+.GitHub-stars:before {
+  content: '★';
+  margin: 0 .2em 0;
 }
-.post-navigation .previous a:before {
-  content: '← ';
-}
-#side-nav {
-  box-sizing: border-box;
-  overflow: hidden;
-}
-#side-nav .menu {
-  display: none;
-}
-#side-nav aside .widget-title {
-  margin-bottom: .2em;
-}
-#side-nav aside ul {
-  margin: 0 0 .5rem 1.5rem;
-  padding: 0;
-  line-height: .8rem;
-}
-#side-nav aside ul li {
-  margin-bottom: .4rem;
-}
-#side-nav:before,
-#side-nav:after {
-  content: "";
-  display: table;
-}
-#side-nav:after {
-  clear: both;
-}
-#side-nav h4 {
-  margin-bottom: 0;
-}
-#side-nav .feedburner {
-  margin-bottom: 1em;
-}
+.rrssb-buttons.large-format li a,.rrssb-buttons.large-format li a .text{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden}.rrssb-buttons,.rrssb-buttons li,.rrssb-buttons li a{-moz-box-sizing:border-box;box-sizing:border-box}.clearfix{*zoom:1}.clearfix:after{clear:both}.clearfix:before,.clearfix:after{content:" ";display:table}.rrssb-buttons{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;height:36px;margin:0;padding:0;width:100%}.rrssb-buttons li{float:left;height:100%;list-style:none;margin:0;padding:0 2.5px}.rrssb-buttons li.email a{background-color:#0a88ff}.rrssb-buttons li.email a:hover{background-color:#006ed6}.rrssb-buttons li.facebook a{background-color:#306199}.rrssb-buttons li.facebook a:hover{background-color:#244872}.rrssb-buttons li.tumblr a{background-color:#32506d}.rrssb-buttons li.tumblr a:hover{background-color:#22364a}.rrssb-buttons li.linkedin a{background-color:#007bb6}.rrssb-buttons li.linkedin a:hover{background-color:#005983}.rrssb-buttons li.twitter a{background-color:#26c4f1}.rrssb-buttons li.twitter a:hover{background-color:#0eaad6}.rrssb-buttons li.googleplus a{background-color:#e93f2e}.rrssb-buttons li.googleplus a:hover{background-color:#ce2616}.rrssb-buttons li.youtube a{background-color:#df1c31}.rrssb-buttons li.youtube a:hover{background-color:#b21627}.rrssb-buttons li.reddit a{background-color:#8bbbe3}.rrssb-buttons li.reddit a:hover{background-color:#62a3d9}.rrssb-buttons li.pinterest a{background-color:#b81621}.rrssb-buttons li.pinterest a:hover{background-color:#8a1119}.rrssb-buttons li.github a{background-color:#444}.rrssb-buttons li.github a:hover{background-color:#2b2b2b}.rrssb-buttons li a{background-color:#ccc;border-radius:2px;display:block;font-size:11px;font-weight:bold;height:100%;padding:11px 7px 12px 27px;position:relative;text-align:center;text-decoration:none;text-transform:uppercase;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:100%;-webkit-transition:background-color 0.2s ease-in-out;-moz-transition:background-color 0.2s ease-in-out;-o-transition:background-color 0.2s ease-in-out;transition:background-color 0.2s ease-in-out}.rrssb-buttons li a .icon{display:block;height:100%;left:10px;padding-top:9px;position:absolute;top:0;width:10%}.rrssb-buttons li a .icon svg{height:17px;width:17px}.rrssb-buttons li a .icon svg path,.rrssb-buttons li a .icon svg polygon{fill:#fff}.rrssb-buttons li a .text{color:#fff}.rrssb-buttons li a:active{box-shadow:inset 1px 3px 15px 0 rgba(22,0,0,0.25)}.rrssb-buttons li.small a{padding:0}.rrssb-buttons li.small a .icon{height:100%;left:auto;margin:0 auto;overflow:hidden;position:relative;top:auto;width:100%}.rrssb-buttons li.small a .text{visibility:hidden}.rrssb-buttons.large-format{height:auto}.rrssb-buttons.large-format li{height:auto}.rrssb-buttons.large-format li a{font-size:15px;font-size:1vw;padding:7% 0% 7% 12%;border-radius:0.2em}.rrssb-buttons.large-format li a .icon{left:7%;padding-top:0;width:12%}.rrssb-buttons.large-format li a .icon svg{height:100%;width:100%}.rrssb-buttons.large-format li a .text{font-size:15px;font-size:1vw}.rrssb-buttons.large-format li a:hover{font-size:15px;font-size:1vw;padding:7% 0% 7% 12%;border-radius:0.2em}.rrssb-buttons.small-format{padding-top:5px}.rrssb-buttons.small-format li{height:80%;padding:0 1.5px}.rrssb-buttons.small-format li a .icon{height:100%;padding-top:0}.rrssb-buttons.small-format li a .icon svg{height:48%;position:relative;top:6px;width:80%}.rrssb-buttons.tiny-format{height:22px;position:relative}.rrssb-buttons.tiny-format li{padding-right:7px}.rrssb-buttons.tiny-format li a{background-color:transparent;padding:0}.rrssb-buttons.tiny-format li a .icon svg{height:70%;width:100%}.rrssb-buttons.tiny-format li a:hover,.rrssb-buttons.tiny-format li a:active{background-color:transparent}.rrssb-buttons.tiny-format li.email a .icon svg path,.rrssb-buttons.tiny-format li.email a .icon svg polygon{fill:#0a88ff}.rrssb-buttons.tiny-format li.email a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.email a .icon:hover .icon svg polygon{fill:#0054a3}.rrssb-buttons.tiny-format li.facebook a .icon svg path,.rrssb-buttons.tiny-format li.facebook a .icon svg polygon{fill:#306199}.rrssb-buttons.tiny-format li.facebook a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.facebook a .icon:hover .icon svg polygon{fill:#18304b}.rrssb-buttons.tiny-format li.tumblr a .icon svg path,.rrssb-buttons.tiny-format li.tumblr a .icon svg polygon{fill:#32506d}.rrssb-buttons.tiny-format li.tumblr a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.tumblr a .icon:hover .icon svg polygon{fill:#121d27}.rrssb-buttons.tiny-format li.linkedin a .icon svg path,.rrssb-buttons.tiny-format li.linkedin a .icon svg polygon{fill:#007bb6}.rrssb-buttons.tiny-format li.linkedin a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.linkedin a .icon:hover .icon svg polygon{fill:#003650}.rrssb-buttons.tiny-format li.twitter a .icon svg path,.rrssb-buttons.tiny-format li.twitter a .icon svg polygon{fill:#26c4f1}.rrssb-buttons.tiny-format li.twitter a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.twitter a .icon:hover .icon svg polygon{fill:#0b84a6}.rrssb-buttons.tiny-format li.googleplus a .icon svg path,.rrssb-buttons.tiny-format li.googleplus a .icon svg polygon{fill:#e93f2e}.rrssb-buttons.tiny-format li.googleplus a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.googleplus a .icon:hover .icon svg polygon{fill:#a01e11}.rrssb-buttons.tiny-format li.youtube a .icon svg path,.rrssb-buttons.tiny-format li.youtube a .icon svg polygon{fill:#df1c31}.rrssb-buttons.tiny-format li.youtube a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.youtube a .icon:hover .icon svg polygon{fill:#84111d}.rrssb-buttons.tiny-format li.reddit a .icon svg path,.rrssb-buttons.tiny-format li.reddit a .icon svg polygon{fill:#8bbbe3}.rrssb-buttons.tiny-format li.reddit a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.reddit a .icon:hover .icon svg polygon{fill:#398bcf}.rrssb-buttons.tiny-format li.pinterest a .icon svg path,.rrssb-buttons.tiny-format li.pinterest a .icon svg polygon{fill:#b81621}.rrssb-buttons.tiny-format li.pinterest a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.pinterest a .icon:hover .icon svg polygon{fill:#5d0b11}.rrssb-buttons.tiny-format li.github a .icon svg path,.rrssb-buttons.tiny-format li.github a .icon svg polygon{fill:#444}.rrssb-buttons.tiny-format li.github a .icon:hover .icon svg path,.rrssb-buttons.tiny-format li.github a .icon:hover .icon svg polygon{fill:#111}
+
 /**
  * SyntaxHighlighter
  * http://alexgorbatchev.com/SyntaxHighlighter

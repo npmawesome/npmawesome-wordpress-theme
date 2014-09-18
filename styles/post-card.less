@@ -13,18 +13,8 @@
 .PostCard-header {
   margin-left: @PostCard-imageSize + 20px;
 
-  .ByLine {
-    img {
-      display: none;
-      width: 20px;
-      border-radius: 50%;
-      vertical-align: bottom;
-      margin-top: 5px;
-    }
-
-    a:before {
-      content: ' ';
-    }
+  .ByLine img {
+    display: none;
   }
 }
 
@@ -71,6 +61,23 @@
   content: 'by ';
 }
 
-// @import 'phone/article-card';
-// @import 'tablet/article-card';
-// @import 'desktop/article-card';
+.media-phone({
+  @PostCard-imageSize: 60px;
+
+  .PostCard-image {
+    width: @PostCard-imageSize;
+    height: @PostCard-imageSize;
+  }
+
+  .PostCard-header {
+    margin-left: @PostCard-imageSize + 10px;
+  }
+
+  .PostCard-title {
+    font-size: 1.5em;
+  }
+
+  .PostCard--module .PostCard-title {
+    font-size: 2em;
+  }
+});

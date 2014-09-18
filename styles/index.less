@@ -11,17 +11,17 @@ GitHub Branch    : master
 @import 'media';
 
 // bootstrap
-@import "../bower_components/bootstrap/less/variables.less";
-@import "../bower_components/bootstrap/less/mixins.less";
-@import "../bower_components/bootstrap/less/scaffolding.less";
-@import "../bower_components/bootstrap/less/type.less";
-@import "../bower_components/bootstrap/less/code.less";
-@import "../bower_components/bootstrap/less/pagination.less";
-@import "../bower_components/bootstrap/less/pager.less";
-@import "../bower_components/bootstrap/less/grid.less";
-@import "../bower_components/bootstrap/less/responsive-utilities.less";
+@import '../bower_components/bootstrap/less/variables.less';
+@import '../bower_components/bootstrap/less/mixins.less';
+@import '../bower_components/bootstrap/less/scaffolding.less';
+@import '../bower_components/bootstrap/less/type.less';
+@import '../bower_components/bootstrap/less/code.less';
+@import '../bower_components/bootstrap/less/pagination.less';
+@import '../bower_components/bootstrap/less/pager.less';
+@import '../bower_components/bootstrap/less/grid.less';
+@import '../bower_components/bootstrap/less/responsive-utilities.less';
 
-@body-font: "Source Sans Pro", Helvetica, Arial, sans-serif;
+@body-font: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 @code-font: Monaco, Courier New, monospace;
 
 body {
@@ -32,7 +32,7 @@ body {
 }
 
 a {
-  color: #0074a2;
+  color: darkorange;
   text-decoration: none;
 }
 
@@ -47,10 +47,12 @@ a:hover {
 }
 
 @import 'page-header';
+@import 'post';
 @import 'post-card';
-@import 'article';
 @import 'post-navigation';
-@import 'side-nav';
+@import 'partner';
+@import 'recent-posts';
+@import 'github-stars';
 
+@import (inline) '../bower_components/RRSSB/css/rrssb.css';
 @import (inline) '../js/syntaxhighlighter/shCoreDefault.css';
-

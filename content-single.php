@@ -5,57 +5,76 @@
  * @package npmawesome
  */
 
+function the_social($is_module) {
+  include(get_template_directory().'/inc/social-buttons.php');
+}
+
 $is_module = in_category('npm');
 
 $classes = array(
-  $is_module ? 'npm' : 'article'
+  'Post',
+  $is_module ? 'Post-module' : 'Post-article'
 );
 
-function the_social() {
-  ?>
-  <div class="social-box">
-    <div class="yashare-auto-init" data-yashareLink="<?php the_permalink(); ?>" data-yashareL10n="en" data-yashareQuickServices="facebook,twitter,gplus" data-yashareTheme="counter" data-yasharetype-off="small"></div>
-  </div>
-  <?php
+if($is_module) {
+  $post_image_url = npm_get_github_field('avatar_url');
+  $colors         = npm_get_remote_image_color($post_image_url);
 }
-?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-  <header>
-    <h2>
-      <a href="<?php the_permalink(); ?>">
-        <?php the_title(); ?>
-      </a>
-      <?php
-        if($is_module) {
-          echo '<div class="github-stars" data-github-repo="'.get_field('module_github').'"></div>';
-        }
-      ?>
-    </h2>
+if(has_post_thumbnail()) {
+  $post_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large');
+  $post_image_url = $post_image_url[0];
+  $colors         = npm_get_remote_image_color($post_image_url);
+}
 
-    <div class="meta">
-      <?php npmawesome_posted_on(); ?>
+if(isset($colors)) { ?>
+  <style>
+  #Post-id-<?php the_ID(); ?> .Post-moduleHeader {
+    color: <?php echo $colors['text'] ?>;
+    background-color: <?php echo $colors['background']; ?>
+  }
 
-      <?php
-        $category_list = get_the_category_list( ', ' );
-        $tag_list = get_the_tag_list( '', ', ' );
-        printf('This entry was tagged %2$s.', $tag_list);
-      ?>
-    </div>
+  #Post-id-<?php the_ID(); ?> .Post-moduleHeader .Post-title {
+    color: <?php echo $colors['header'] ?>;
+  }
 
-    <?php the_social(); ?>
+  #Post-id-<?php the_ID(); ?> .Post-moduleHeader .GitHub-stars {
+    color: <?php echo $colors['background'] ?>;
+    background-color: <?php echo $colors['header'] ?>;
+  }
+  </style>
+<?php } ?>
+
+<div id="Post-id-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+  <header class="Post-header">
+    <?php if($is_module) { ?>
+      <div class="Post-moduleHeader">
+        <?php echo npm_get_author_photo() ?>
+        <h2 class="Post-title">
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          <div class="GitHub-stars" data-github-repo="<?php echo get_field('module_github') ?>"></div>
+        </h2>
+        <?php echo npm_get_author() ?>
+      </div>
+    <?php } else { ?>
+      <h2 class="Post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+    <?php } ?>
   </header>
 
-  <div class="content">
-    <?php the_content(); ?>
-    <?php
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . __( 'Pages:', 'npmawesome' ),
-        'after'  => '</div>',
-      ) );
-    ?>
+  <?php the_social($is_module); ?>
+
+  <div class="Post-meta">
+    <?php npmawesome_posted_on(); ?>
   </div>
 
-  <?php the_social(); ?>
-</article>
+  <div class="Post-content">
+    <?php the_content(); ?>
 
+    <?php wp_link_pages(array(
+      'before' => '<div class="page-links">'.__('Pages:', 'npmawesome'),
+      'after'  => '</div>',
+    )); ?>
+  </div>
+
+  <?php the_social($is_module); ?>
+</div>

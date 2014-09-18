@@ -50,7 +50,7 @@ function npmawesome_post_nav() {
     return;
   }
   ?>
-  <ul class="pager navigation post-navigation" role="navigation">
+  <ul class="PostNavigation pager navigation" role="navigation">
     <?php
       previous_post_link( '<li class="previous">%link</li>', _x( '%title', 'Previous post link', 'npmawesome' ) );
       next_post_link(     '<li class="next">%link</li>',     _x( '%title', 'Next post link',     'npmawesome' ) );
