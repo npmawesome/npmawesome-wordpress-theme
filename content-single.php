@@ -29,35 +29,45 @@ if(has_post_thumbnail()) {
 
 if(isset($colors)) { ?>
   <style>
-  #Post-id-<?php the_ID(); ?> .Post-moduleHeader {
-    color: <?php echo $colors['text'] ?>;
-    background-color: <?php echo $colors['background']; ?>
-  }
+    #Post-id-<?php the_ID(); ?> .u-colorsBackground {
+      color: <?php echo $colors['text'] ?>;
+      background-color: <?php echo $colors['background']; ?>
+    }
 
-  #Post-id-<?php the_ID(); ?> .Post-moduleHeader .Post-title {
-    color: <?php echo $colors['header'] ?>;
-  }
+    #Post-id-<?php the_ID(); ?> .colorsTitle {
+      color: <?php echo $colors['header'] ?>;
+    }
 
-  #Post-id-<?php the_ID(); ?> .Post-moduleHeader .GitHub-stars {
-    color: <?php echo $colors['background'] ?>;
-    background-color: <?php echo $colors['header'] ?>;
-  }
+  <?php if($is_module) { ?>
+    #Post-id-<?php the_ID(); ?> .Post-moduleHeader .GitHub-stars {
+      color: <?php echo $colors['background'] ?>;
+      background-color: <?php echo $colors['header'] ?>;
+    }
+  <?php } ?>
   </style>
 <?php } ?>
 
 <div id="Post-id-<?php the_ID(); ?>" <?php post_class($classes); ?>>
   <header class="Post-header">
     <?php if($is_module) { ?>
-      <div class="Post-moduleHeader">
+      <div class="Post-moduleHeader u-colorsBackground">
         <?php echo npm_get_author_photo() ?>
-        <h2 class="Post-title">
+        <h2 class="Post-title u-colorsTitle">
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           <div class="GitHub-stars" data-github-repo="<?php echo get_field('module_github') ?>"></div>
         </h2>
         <?php echo npm_get_author() ?>
       </div>
     <?php } else { ?>
-      <h2 class="Post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+      <div class="Post-articleHeader u-colorsBackground">
+        <?php if($post_image_url) {
+          echo "<img src=\"$post_image_url\"/>";
+        } else { ?>
+          <h2 class="Post-title u-colorsTitle">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h2>
+        <?php } ?>
+      </div>
     <?php } ?>
   </header>
 
