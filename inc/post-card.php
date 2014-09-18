@@ -27,8 +27,7 @@ if(has_post_thumbnail()) {
   $colors         = npm_get_remote_image_color($post_image_url);
 }
 
-if(isset($colors)) {
-  ?>
+if(isset($colors)) { ?>
   <style>
   #PostCard-id-<?php the_ID(); ?> {
     color: <?php echo $colors['text'] ?>;
@@ -39,9 +38,7 @@ if(isset($colors)) {
     color: <?php echo $colors['header'] ?>;
   }
   </style>
-  <?php
-}
-?>
+<?php } ?>
 
 <div id="PostCard-id-<?php the_ID(); ?>" <?php post_class($classes); ?>>
   <div class="PostCard-box">

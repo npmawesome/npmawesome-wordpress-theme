@@ -16,4 +16,5 @@ get_header(); ?>
       endif;
     ?>
   <?php endwhile; // end of the loop. ?>
+  <?php include(get_template_directory().'/inc/recent-posts.php'); ?>
 <?php get_footer(); ?>

@@ -8,16 +8,6 @@
  */
 ?>
       </div>
-
-      <div id="side-nav" class="col-md-4">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-        <?php get_sidebar(); ?>
-
-        <?php if(is_home()): ?>
-          <a class="twitter-timeline" href="https://twitter.com/search?q=-jobs+AND+-employer+AND+%28javascript+OR+npm+OR+angularjs+OR+coffeescript+OR+nodejs%29" data-widget-id="496005807700324354">Tweets about "-jobs AND -employer AND (javascript OR npm OR angularjs OR coffeescript OR nodejs)"</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        <?php endif; ?>
-      </div>
     </div>
   </div>
 
@@ -30,7 +20,6 @@
   </script>
 
   <script async src="//platform.twitter.com/widgets.js"></script>
-  <script async src="//yandex.st/share/share.js"></script>
 
   <?php wp_footer(); ?>
 </body>

@@ -42,5 +42,5 @@
   <a name="content"></a>
   <div class="container">
     <div class="row">
-      <div id="main-content" class="col-md-8">
+      <div id="main-content" class="col-md-12">
 
