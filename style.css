@@ -1586,143 +1586,62 @@ a:hover {
     display: none;
   }
 }
-.article-card a {
-  color: #000;
+.PostCard-box {
+  position: relative;
+  overflow: auto;
+  padding: .5em;
 }
-.article-card.npm header h2 {
-  font-size: 2em;
-  white-space: nowrap;
+.PostCard a {
+  color: inherit;
 }
-.article-card.article header h2 {
-  font-size: 1.5em;
+.PostCard-header {
+  margin-left: 140px;
+}
+.PostCard-header .ByLine img {
+  display: none;
+  width: 20px;
+  border-radius: 50%;
+  vertical-align: bottom;
+  margin-top: 5px;
+}
+.PostCard-header .ByLine a:before {
+  content: ' ';
+}
+.PostCard-title {
+  font-size: 3em;
   font-weight: 600;
+  margin: 0;
 }
-.article-card .edit-link {
+.PostCard--module .PostCard-title {
+  font-size: 4em;
+}
+.PostCard-desc {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0 0 .3em 0;
+}
+.PostCard-edit {
   font-size: 10px;
   font-weight: normal;
   text-transform: lowercase;
   line-height: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
-.article-card .post-image {
-  z-index: 1;
+.PostCard-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 120px;
+  height: 120px;
+  float: left;
 }
-.article-card .post-image img {
+.PostCard-image img {
   display: none;
 }
-.article-card header {
-  font-size: 1em;
-  margin: 0;
-}
-.article-card header h2 {
-  display: block;
-}
-.article-card header .npm.author.photo {
-  overflow: hidden;
-  display: block;
-  width: 80px;
-  height: 80px;
-}
-.article-card header .npm.author.photo img {
-  width: 100%;
-  height: 100%;
-}
-.article-card header .npm.author.name {
-  display: block;
-}
-.article-card header .npm.author.name:before {
+.PostCard-author:before {
   content: 'by ';
-}
-@media only screen and (max-width: 991px) {
-  .article-card {
-    width: 100%;
-    margin: 0 0 1em 0;
-  }
-  .article-card.article header h2 {
-    font-size: 1.5em;
-  }
-  .article-card .box {
-    box-sizing: border-box;
-    position: relative;
-    min-height: 80px;
-  }
-  .article-card .post-image {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 80px;
-    width: 80px;
-  }
-  .article-card .edit-link {
-    position: absolute;
-    right: 15px;
-    top: 0;
-  }
-  .article-card header {
-    padding-left: 110px;
-    font-size: 1em;
-    margin: 0;
-  }
-  .article-card header h2 {
-    display: block;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.2em;
-    font-weight: bold;
-  }
-  .article-card header .npm.author.photo {
-    position: absolute;
-    left: 15px;
-    top: 0px;
-  }
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  #main-content .article-card {
-    width: 50%;
-    float: left;
-    margin-bottom: 15px;
-  }
-  #main-content .article-card:nth-child(2n + 1) .box {
-    margin: 0 .5em 1em 0;
-  }
-  #main-content .article-card:nth-child(2n + 2) .box {
-    margin: 0 0 1em .5em;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #main-content .article-card .box {
-    min-height: 120px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  #main-content .article-card .box:hover {
-    border-color: #000;
-  }
-  #main-content .article-card.category-npm:not(.category-article) header {
-    padding-top: 30px;
-  }
-  #main-content .article-card .post-image {
-    height: 120px;
-    width: 120px;
-  }
-  #main-content .article-card .post-image img {
-    display: none;
-  }
-  #main-content .article-card header {
-    margin-left: 140px;
-    float: left;
-  }
-  #main-content .article-card header h2 {
-    margin: .3em 0 0 0;
-  }
-  #main-content .article-card .edit-link {
-    position: absolute;
-    right: 15px;
-    bottom: 15px;
-  }
 }
 article {
   max-width: 100%;
@@ -1974,48 +1893,6 @@ article .content .highlight img {
 }
 #side-nav .feedburner {
   margin-bottom: 1em;
-}
-#side-nav .article-card {
-  width: 100%;
-  margin: 0 0 1em 0;
-}
-#side-nav .article-card.article header h2 {
-  font-size: 1.5em;
-}
-#side-nav .article-card .box {
-  box-sizing: border-box;
-  position: relative;
-  min-height: 80px;
-}
-#side-nav .article-card .post-image {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  height: 80px;
-  width: 80px;
-}
-#side-nav .article-card .edit-link {
-  position: absolute;
-  right: 15px;
-  top: 0;
-}
-#side-nav .article-card header {
-  padding-left: 110px;
-  font-size: 1em;
-  margin: 0;
-}
-#side-nav .article-card header h2 {
-  display: block;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.2em;
-  font-weight: bold;
-}
-#side-nav .article-card header .npm.author.photo {
-  position: absolute;
-  left: 15px;
-  top: 0px;
 }
 /**
  * SyntaxHighlighter

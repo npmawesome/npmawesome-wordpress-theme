@@ -13,7 +13,7 @@ function npm_get_author($post_id) {
   }
 
   $result = "<a href='$html_url'>$name</a>";
-  return "<span class='npm author name'>$result</span>";
+  return "<span class='NpmAuthor-name'>$result</span>";
 }
 
 function npm_get_author_photo($post_id) {
@@ -24,8 +24,7 @@ function npm_get_author_photo($post_id) {
   }
 
   $result = "<img src='$avatar_url' width='200' align='right' vspace='10' hspace='10'/>";
-
-  return "<span class='npm author photo'>$result</span>";
+  return "<span class='NpmAuthor-photo'>$result</span>";
 }
 
 function npm_author_shortcode($atts) {
@@ -42,4 +41,3 @@ function npm_author_shortcode($atts) {
 }
 
 add_shortcode('author', 'npm_author_shortcode');
-?>

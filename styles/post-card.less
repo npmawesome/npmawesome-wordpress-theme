@@ -1,0 +1,76 @@
+@PostCard-imageSize: 120px;
+
+.PostCard-box {
+  position: relative;
+  overflow: auto;
+  padding: .5em;
+}
+
+.PostCard a {
+  color: inherit;
+}
+
+.PostCard-header {
+  margin-left: @PostCard-imageSize + 20px;
+
+  .ByLine {
+    img {
+      display: none;
+      width: 20px;
+      border-radius: 50%;
+      vertical-align: bottom;
+      margin-top: 5px;
+    }
+
+    a:before {
+      content: ' ';
+    }
+  }
+}
+
+.PostCard-title {
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.PostCard--module .PostCard-title {
+  font-size: 4em;
+}
+
+.PostCard-desc {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0 0 .3em 0;
+}
+
+.PostCard-edit {
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: lowercase;
+  line-height: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.PostCard-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: @PostCard-imageSize;
+  height: @PostCard-imageSize;
+  float: left;
+
+  img {
+    display: none;
+  }
+}
+
+.PostCard-author:before {
+  content: 'by ';
+}
+
+// @import 'phone/article-card';
+// @import 'tablet/article-card';
+// @import 'desktop/article-card';
