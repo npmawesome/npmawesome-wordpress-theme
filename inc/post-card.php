@@ -29,22 +29,22 @@ if(has_post_thumbnail()) {
 
 if(isset($colors)) { ?>
   <style>
-  #PostCard-id-<?php the_ID(); ?> {
-    color: <?php echo $colors['text'] ?>;
+  #PostCard-id-<?php the_ID(); ?> .u-colorsBackground {
+    color: <?php echo $colors['text'] ?> !important;
     background-color: <?php echo $colors['background']; ?>
   }
 
-  #PostCard-id-<?php the_ID(); ?> .PostCard-header {
-    color: <?php echo $colors['header'] ?>;
+  #PostCard-id-<?php the_ID(); ?> .u-colorsTitle {
+    color: <?php echo $colors['header'] ?> !important;
   }
   </style>
 <?php } ?>
 
 <div id="PostCard-id-<?php the_ID(); ?>" <?php post_class($classes); ?>>
-  <div class="PostCard-box">
+  <div class="PostCard-box u-colorsBackground">
     <?php if($post_image_url) echo "<div class=\"PostCard-image\" style=\"background-image: url($post_image_url)\"><img src=\"$post_image_url\"/></div>"; ?>
     <header class="PostCard-header">
-      <h2 class="PostCard-title">
+      <h2 class="PostCard-title u-colorsTitle">
         <a href="<?php the_permalink(); ?>" class="PostCard-permalink"><?php the_title(); ?></a>
       </h2>
       <?php if(!empty($module_desc)) echo "<h3 class=\"PostCard-desc\">".esc_attr($module_desc)."</h3>"; ?>
