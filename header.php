@@ -22,20 +22,25 @@
   <a class="screen-reader-text" style="display: none" href="#content"><?php _e( 'Skip to content', 'npmawesome' ); ?></a>
 
   <header id="page-header">
-    <div class="layout-container">
-      <h1 id="logo">
-        <a href="/" class="name"><?php bloginfo('name'); ?></a>
-      </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 id="logo">
+            <a href="<?php echo site_url(); ?>" class="name"><?php bloginfo('name'); ?></a>
+          </h1>
 
-      <div id="sub-title">
-        <span class="posts-counter">
-          <?php echo npmawesome_get_category_count('npm'); ?>
-        </span>
+          <div id="sub-title">
+            <span class="posts-counter">
+              <?php echo npmawesome_get_category_count('npm'); ?>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
   <a name="content"></a>
-  <div class="layout-container">
-    <div id="main-content">
+  <div class="container">
+    <div class="row">
+      <div id="main-content" class="col-md-8">
 
