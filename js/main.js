@@ -15,6 +15,19 @@ function initGithubStars() {
   stars.unveil();
 }
 
+function initSyntaxHighlighter() {
+  $('pre > code').each(function() {
+    var self = $(this);
+    self.parent().addClass('brush: ' + self.attr('class'));
+    self.parent().html(self.html());
+  });
+
+  $(function() {
+    SyntaxHighlighter.highlight();
+  });
+}
+
 $(function() {
   initGithubStars();
+  initSyntaxHighlighter();
 });
