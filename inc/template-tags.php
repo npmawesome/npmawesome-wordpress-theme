@@ -50,14 +50,12 @@ function npmawesome_post_nav() {
     return;
   }
   ?>
-  <nav class="navigation post-navigation" role="navigation">
-    <div class="nav-links">
-      <?php
-        previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'npmawesome' ) );
-        next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'npmawesome' ) );
-      ?>
-    </div><!-- .nav-links -->
-  </nav><!-- .navigation -->
+  <ul class="pager navigation post-navigation" role="navigation">
+    <?php
+      previous_post_link( '<li class="previous">%link</li>', _x( '%title', 'Previous post link', 'npmawesome' ) );
+      next_post_link(     '<li class="next">%link</li>',     _x( '%title', 'Next post link',     'npmawesome' ) );
+    ?>
+  </ul><!-- .navigation -->
   <?php
 }
 endif;

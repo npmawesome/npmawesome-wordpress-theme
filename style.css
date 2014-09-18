@@ -605,6 +605,44 @@ pre code {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
 }
+.pager {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: center;
+}
+.pager li {
+  display: inline;
+}
+.pager li > a,
+.pager li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 15px;
+}
+.pager li > a:hover,
+.pager li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+.pager .next > a,
+.pager .next > span {
+  float: right;
+}
+.pager .previous > a,
+.pager .previous > span {
+  float: left;
+}
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777777;
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -1539,7 +1577,7 @@ a:hover {
 #page-header a {
   color: #000;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   #page-header {
     padding: 0 1em;
     margin-bottom: 15px;
@@ -1597,7 +1635,7 @@ a:hover {
 .article-card header .npm.author.name:before {
   content: 'by ';
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   .article-card {
     width: 100%;
     margin: 0 0 1em 0;
@@ -1642,7 +1680,7 @@ a:hover {
     top: 0px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 76em) {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
   #main-content .article-card {
     width: 50%;
     float: left;
@@ -1655,7 +1693,7 @@ a:hover {
     margin: 0 0 1em .5em;
   }
 }
-@media only screen and (min-width: 76em) {
+@media only screen and (min-width: 1200px) {
   #main-content .article-card {
     width: 33%;
     float: left;
@@ -1670,7 +1708,7 @@ a:hover {
     margin: 0 0 1em .5em;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   #main-content .article-card.npm header h2 {
     text-align: center;
   }
@@ -1755,7 +1793,7 @@ article header .meta .comments {
 }
 article header .meta .author img {
   vertical-align: middle;
-  width: 30px;
+  width: 45px;
   border-radius: 50%;
   margin-right: .5em;
 }
@@ -1780,6 +1818,7 @@ article header .github-stars:before {
 }
 article .content {
   line-height: 150%;
+  font-size: 120%;
 }
 article .content h1,
 article .content h2,
@@ -1874,6 +1913,7 @@ article pre code {
 article code {
   background: #e0e0e0;
   padding: 0 0.3em;
+  color: inherit;
 }
 article blockquote {
   color: gray;
@@ -1897,7 +1937,7 @@ article .content .highlight img {
   float: right;
   margin-left: 1em;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
   article {
     border-bottom: none;
     padding-bottom: 0;
@@ -1935,15 +1975,13 @@ article .content .highlight img {
 }
 .post-navigation {
   margin: 1em 0;
-}
-.post-navigation .nav-links {
   overflow: auto;
 }
-.post-navigation .nav-links .nav-previous {
-  float: left;
+.post-navigation .next a:after {
+  content: ' →';
 }
-.post-navigation .nav-links .nav-next {
-  float: right;
+.post-navigation .previous a:before {
+  content: '← ';
 }
 #side-nav {
   box-sizing: border-box;

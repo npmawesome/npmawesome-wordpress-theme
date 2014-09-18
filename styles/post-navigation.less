@@ -1,15 +1,12 @@
 .post-navigation {
   margin: 1em 0;
+  overflow: auto;
 
-  .nav-links {
-    overflow: auto;
+  .next a:after {
+    content: ' →';
+  }
 
-    .nav-previous {
-      float: left;
-    }
-
-    .nav-next {
-      float: right;
-    }
+  .previous a:before {
+    content: '← ';
   }
 }
