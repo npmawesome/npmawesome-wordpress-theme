@@ -3,6 +3,50 @@
  * @package npmawesome
  */
 
+function npm_slugify($text) {
+  $text = preg_replace('~[^\\pL\d]+~u', '-', $text);
+  $text = trim($text, '-');
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+  $text = strtolower($text);
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  if (empty($text)) {
+    return 'n-a';
+  }
+
+  return $text;
+}
+
+function npm_get_remote_image_color($url) {
+  require_once get_template_directory().'/vendor/cover-colors/index.php';
+
+  $colors = npm_get_cached_json($url);
+
+  if(isset($colors)) {
+    return $colors;
+  }
+
+  $temp = tempnam('/tmp', 'npmawesome-remote-image-color-');
+  file_put_contents($temp, fopen($url, 'r'));
+
+  try {
+    $analyzeImage = \Image\Image::createFromFile($temp);
+    $analyzer = new Analyzer($analyzeImage);
+    $result = $analyzer->getResult();
+
+    $colors = array(
+      'background' => $result->background->getHexString(),
+      'header'     => $result->title->getHexString(),
+      'text'       => $result->songs->getHexString(),
+    );
+  } catch (Exception $e) {
+    echo $e->getMessage();
+  }
+
+  unlink($temp);
+  return npm_set_cached_json($url, $colors);
+}
+
 // replace the default posts feed with feedburner
 function npmawesome_custom_rss_feed($output, $feed) {
   if(strpos($output, 'comments'))
@@ -28,7 +72,7 @@ function npm_curl($url) {
 }
 
 function npm_get_cached_json($url) {
-  $file = get_template_directory().'/cache/'.md5($url);
+  $file = get_template_directory().'/cache/'.npm_slugify($url);
 
   if(file_exists($file)) {
     return json_decode(file_get_contents($file), true);
@@ -36,7 +80,7 @@ function npm_get_cached_json($url) {
 }
 
 function npm_set_cached_json($url, $value) {
-  $file = get_template_directory().'/cache/'.md5($url);
+  $file = get_template_directory().'/cache/'.npm_slugify($url);
   file_put_contents($file, json_encode($value));
   return $value;
 }
