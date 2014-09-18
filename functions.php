@@ -31,7 +31,8 @@ if ( ! function_exists( 'npmawesome_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function npmawesome_setup() {
-  require get_template_directory() . '/widgets/recent-posts.php';
+  require get_template_directory() . '/widgets/index.php';
+  require get_template_directory() . '/shortcodes/index.php';
 
   /*
    * Make theme available for translation.

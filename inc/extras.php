@@ -1,11 +1,92 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
- *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package npmawesome
  */
+
+// replace the default posts feed with feedburner
+function npmawesome_custom_rss_feed($output, $feed) {
+  if(strpos($output, 'comments'))
+    return $output;
+
+  return esc_url('http://feeds.feedburner.com/npmawesome');
+}
+
+add_action('feed_link', 'npmawesome_custom_rss_feed', 10, 2);
+
+function npm_curl($url) {
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+  curl_setopt($ch, CURLOPT_HEADER, false);
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_REFERER, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent: npmawesome.com"));
+  $result = curl_exec($ch);
+  curl_close($ch);
+  return $result;
+}
+
+function npm_get_cached_json($url) {
+  $file = get_template_directory().'/cache/'.md5($url);
+
+  if(file_exists($file)) {
+    return json_decode(file_get_contents($file), true);
+  }
+}
+
+function npm_set_cached_json($url, $value) {
+  $file = get_template_directory().'/cache/'.md5($url);
+  file_put_contents($file, json_encode($value));
+  return $value;
+}
+
+function npm_curl_json($url) {
+  $json = npm_get_cached_json($url);
+
+  if(isset($json)) {
+    return $json;
+  }
+
+  $json = json_decode(npm_curl($url), true);
+  return npm_set_cached_json($url, $json);
+}
+
+function npm_github_link_html($link) {
+  return "<a href='https://github.com/$link'>$link</a>";
+}
+
+function npm_get_github_info($post_id) {
+  $post_id = $post_id ?: get_the_ID();
+  $cache_key = "npm_github_info_$post_id";
+  $github_info = wp_cache_get($cache_key);
+
+  if($github_info !== FALSE) {
+    return $github_info;
+  }
+
+  $github = get_field('module_author', $post_id);
+
+  if(empty($github)) {
+    $github = get_field('module_github', $post_id);
+    $github = substr($github, 0, strpos($github, '/'));
+
+    if(empty($github)) {
+      return null;
+    }
+  }
+
+  $github_info = npm_curl_json("https://api.github.com/users/$github");
+
+  wp_cache_set($cache_key, $github_info);
+
+  return $github_info;
+}
+
+function npm_get_github_field($field_name, $post_id) {
+  $github_info = npm_get_github_info($post_id);
+  return $github_info[$field_name];
+}
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -17,6 +98,7 @@ function npmawesome_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
+
 add_filter( 'wp_page_menu_args', 'npmawesome_page_menu_args' );
 
 /**
