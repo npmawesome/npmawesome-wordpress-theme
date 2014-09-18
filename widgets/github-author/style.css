@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'octicons';
-  src: url('octicons.svg?#octicons') format('svg');
+  src: url('octicons.svg') format('svg'), url('octicons.woff') format('woff'), url('octicons.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
