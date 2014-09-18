@@ -1,23 +1,23 @@
 .media-desktop(@rules) {
-  @media only screen and (min-width: 76em) {
+  @media only screen and (min-width: @screen-lg-min) {
     @rules();
   }
 }
 
 .media-desktop-and-tablet(@rules) {
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: @screen-md-min) {
     @rules();
   }
 }
 
 .media-tablet(@rules) {
-  @media only screen and (min-width: 768px) and (max-width: 76em) {
+  @media only screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
     @rules();
   }
 }
 
 .media-phone(@rules) {
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: @screen-sm-max) {
     @rules();
   }
 }
