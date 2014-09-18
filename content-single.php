@@ -30,17 +30,17 @@ if(has_post_thumbnail()) {
 if(isset($colors)) { ?>
   <style>
     #Post-id-<?php the_ID(); ?> .u-colorsBackground {
-      color: <?php echo $colors['text'] ?>;
+      color: <?php echo $colors['text'] ?> !important;
       background-color: <?php echo $colors['background']; ?>
     }
 
-    #Post-id-<?php the_ID(); ?> .colorsTitle {
-      color: <?php echo $colors['header'] ?>;
+    #Post-id-<?php the_ID(); ?> .u-colorsTitle {
+      color: <?php echo $colors['header'] ?> !important;
     }
 
   <?php if($is_module) { ?>
     #Post-id-<?php the_ID(); ?> .Post-moduleHeader .GitHub-stars {
-      color: <?php echo $colors['background'] ?>;
+      color: <?php echo $colors['background'] ?> !important;
       background-color: <?php echo $colors['header'] ?>;
     }
   <?php } ?>
