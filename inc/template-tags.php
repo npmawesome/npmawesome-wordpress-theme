@@ -60,6 +60,29 @@ function npmawesome_post_nav() {
 }
 endif;
 
+if ( ! function_exists( 'npmawesome_by_line' ) ) :
+function npmawesome_by_line() {
+  if(function_exists('coauthors_posts_links')) {
+    $authors = get_coauthors();
+    $author = $authors[0];
+  }
+
+  if(empty($author)) {
+    global $authordata;
+    $author = $authordata;
+  }
+
+  $byline =
+    '<span class="author vcard">'.
+      '<img src="http://www.gravatar.com/avatar/'.md5($author->user_email).'"/>'.
+      '<a class="url fn n" href="'.esc_url(get_author_posts_url($author->ID, $author->user_nicename)).'">'.esc_html($author->display_name).'</a>'.
+    '</span>'
+    ;
+
+  echo '<span class="ByLine">'.$byline.'</span>';
+}
+endif;
+
 if ( ! function_exists( 'npmawesome_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -99,7 +122,8 @@ function npmawesome_posted_on() {
     '</span>'
     ;
 
-  echo '<span class="byline">' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>';
+  npmawesome_by_line();
+  echo ' <span class="posted-on">'.$posted_on.'</span>';
 }
 endif;
 
