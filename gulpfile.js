@@ -18,4 +18,8 @@ gulp.task('less-widgets', function () {
     .pipe(gulp.dest('widgets'));
 });
 
+gulp.task('dev', function() {
+  gulp.watch('**/*.less', ['less-widgets', 'less-main']);
+});
+
 gulp.task('default', ['less-main', 'less-widgets']);
