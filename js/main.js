@@ -25,7 +25,7 @@ function initSyntaxHighlighter() {
     }
 
     self.parent()
-      .addClass('brush: ' + self.attr('class'))
+      .addClass('brush: ' + (self.attr('class') || 'javascript'))
       .html(self.html())
       ;
   });
