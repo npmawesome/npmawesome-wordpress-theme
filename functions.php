@@ -109,22 +109,29 @@ add_action( 'widgets_init', 'npmawesome_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+function npmawesome_enqueue_script($filename) {
+  $version = filemtime(get_stylesheet_directory().$filename);
+  wp_enqueue_script("npmawesome-$filename", get_template_directory_uri().$filename, array(), $version, true);
+}
+
 function npmawesome_scripts() {
   wp_enqueue_style( 'npmawesome-style', get_stylesheet_uri().'?t='.filemtime(get_stylesheet_directory().'/style.css') );
   wp_enqueue_style( 'npmawesome-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,400italic' );
   wp_enqueue_script( 'npmawesome-jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js', array(), '2.0.3', true );
-  wp_enqueue_script( 'npmawesome-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-  wp_enqueue_script( 'npmawesome-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-  wp_enqueue_script( 'npmawesome-numeral', get_template_directory_uri() . '/js/numeral.js', array(), '20140718', true );
-  wp_enqueue_script( 'npmawesome-jquery.unveil', get_template_directory_uri() . '/js/jquery.unveil.js', array(), '20140718', true );
-  wp_enqueue_script( 'npmawesome-github-stars', get_template_directory_uri() . '/js/github-stars.js', array(), '20140718', true );
-  wp_enqueue_script( 'npmawesome-main', get_template_directory_uri() . '/js/main.js', array(), '20140718', true );
-  wp_enqueue_script( 'npmawesome-sh-core', get_template_directory_uri() . '/js/syntaxhighlighter/shCore.js', array(), '20140918', true );
-  wp_enqueue_script( 'npmawesome-sh-bash', get_template_directory_uri() . '/js/syntaxhighlighter/shBrushBash.js', array(), '20140918', true );
-  wp_enqueue_script( 'npmawesome-sh-css', get_template_directory_uri() . '/js/syntaxhighlighter/shBrushCss.js', array(), '20140918', true );
-  wp_enqueue_script( 'npmawesome-sh-js', get_template_directory_uri() . '/js/syntaxhighlighter/shBrushJScript.js', array(), '20140918', true );
-  wp_enqueue_script( 'npmawesome-sh-sass', get_template_directory_uri() . '/js/syntaxhighlighter/shBrushSass.js', array(), '20140918', true );
-  wp_enqueue_script( 'npmawesome-sh-xml', get_template_directory_uri() . '/js/syntaxhighlighter/shBrushXml.js', array(), '20140918', true );
+
+  npmawesome_enqueue_script('/js/navigation.js');
+  npmawesome_enqueue_script('/js/skip-link-focus-fix.js');
+  npmawesome_enqueue_script('/js/numeral.js');
+  npmawesome_enqueue_script('/js/jquery.unveil.js');
+  npmawesome_enqueue_script('/js/github-stars.js');
+  npmawesome_enqueue_script('/js/main.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shCore.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shBrushBash.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shBrushCss.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shBrushJScript.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shBrushSass.js');
+  npmawesome_enqueue_script('/js/syntaxhighlighter/shBrushXml.js');
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
