@@ -1,5 +1,5 @@
 function initGithubStars() {
-  var stars = $('.github-stars');
+  var stars = $('.GitHub-stars');
 
   stars.one('unveil', function(e) {
     setTimeout(function() {
@@ -18,8 +18,16 @@ function initGithubStars() {
 function initSyntaxHighlighter() {
   $('pre > code').each(function() {
     var self = $(this);
-    self.parent().addClass('brush: ' + self.attr('class'));
-    self.parent().html(self.html());
+    var text = self.text();
+
+    if(text.indexOf('npm install') === 0) {
+      self.html(text);
+    }
+
+    self.parent()
+      .addClass('brush: ' + self.attr('class'))
+      .html(self.html())
+      ;
   });
 
   $(function() {
