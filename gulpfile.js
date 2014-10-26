@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
 
-gulp.task('less', function () {
+gulp.task('less-main', function () {
   gulp.src('styles/index.less')
     .pipe(less())
     .pipe(rename({
@@ -12,4 +12,10 @@ gulp.task('less', function () {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['less']);
+gulp.task('less-widgets', function () {
+  gulp.src('widgets/*/style.less')
+    .pipe(less())
+    .pipe(gulp.dest('widgets'));
+});
+
+gulp.task('default', ['less-main', 'less-widgets']);
