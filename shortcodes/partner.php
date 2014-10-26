@@ -13,9 +13,11 @@ function npm_partner_shortcode($atts) {
     return "";
   }
 
-  $html = eval(file_get_contents(join(DIRECTORY_SEPARATOR, array(NPM_SHORTCODES_DIR, "partners", "$partner.html"))));
+  ob_start();
+  eval(file_get_contents(join(DIRECTORY_SEPARATOR, array(NPM_SHORTCODES_DIR, "partners", "$partner.html"))));
+  $html = ob_get_clean();
 
-  return "<div class='partner $partner'>$html</span>";
+  return "<div class=\"Partner Partner-$partner\">$html</div>";
 }
 
 add_shortcode('partner', 'npm_partner_shortcode');
