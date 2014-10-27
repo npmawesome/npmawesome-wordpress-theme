@@ -1,23 +1,4 @@
 <?php
-/**
- * Truncates the given string at the specified length.
- *
- * @param string $str The input string.
- * @param int $width The number of chars at which the string will be truncated.
- * @return string
- */
-function npmawesome_truncate($str, $width) {
-  return strtok(wordwrap($str, $width, "...\n"), "\n");
-}
-
-// https://support.twitter.com/articles/78124-how-to-post-shortened-links-urls
-function npmawesome_tweet($left, $url, $right) {
-  // [...] + [space] + [t.co url is always 22 chars] + [space] + [$right]
-  $tail_length = 3 + 1 + 22 + 1 + strlen($right);
-  $left = npmawesome_truncate($left, 140 - $tail_length);
-  return "$left $url $right";
-}
-
 $permalink = get_the_permalink();
 $title     = get_the_title();
 $desc      = amt_get_post_meta_description(get_the_ID());
