@@ -59,14 +59,14 @@ if(isset($colors)) { ?>
         <?php echo npm_get_author() ?>
       </div>
     <?php } else { ?>
-      <div class="Post-articleHeader u-colorsBackground">
-        <?php if($post_image_url) {
-          echo "<img src=\"$post_image_url\"/>";
-        } else { ?>
-          <h2 class="Post-title u-colorsTitle">
+      <div class="Post-articleHeader u-colorsBackground" <?php if($post_image_url) echo "style=\"background-image: url($post_image_url);\""; ?>>
+	<h2 class="Post-title u-colorsTitle">
+          <?php if($post_image_url) { ?>
+            <a href="<?php the_permalink(); ?>"><img src="<?php echo $post_image_url; ?>"/></a>
+          <?php } else { ?>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          </h2>
-        <?php } ?>
+          <?php } ?>
+        </h2>
       </div>
     <?php } ?>
   </header>
@@ -88,3 +88,4 @@ if(isset($colors)) { ?>
 
   <?php the_social($is_module); ?>
 </div>
+

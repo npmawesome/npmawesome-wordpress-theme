@@ -1606,9 +1606,12 @@ a:hover {
 .Post-articleHeader {
   max-height: 400px;
   overflow: hidden;
+  background-position: 50% 50%;
+  background-size: cover;
 }
 .Post-articleHeader img {
   width: 100%;
+  opacity: 0;
 }
 .Post-title {
   margin: 0 0 1rem 0;
