@@ -1538,6 +1538,13 @@ a:hover {
   clear: both;
   overflow: auto;
 }
+img.screenshot {
+  margin: 30px 40px 60px 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: calc(20%);
+  border-radius: 4px;
+}
 .PageHeader-logo {
   margin: 0;
 }
