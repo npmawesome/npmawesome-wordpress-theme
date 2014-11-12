@@ -5,6 +5,15 @@
  * @package npmawesome
  */
 
+if(is_npmawesome_preview()) {
+  while(have_posts()) {
+    the_post();
+    $content = get_post_field('post_content_filtered');
+    echo "<pre>".htmlspecialchars(do_shortcode($content));
+  }
+  return;
+}
+
 get_header(); ?>
   <?php while ( have_posts() ) : the_post(); ?>
     <?php get_template_part( 'content', 'single' ); ?>

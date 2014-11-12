@@ -3,6 +3,10 @@
  * @package npmawesome
  */
 
+function is_npmawesome_preview() {
+  return is_preview() && $_GET['markdown'];
+}
+
 /**
  * Truncates the given string at the specified length.
  *

@@ -12,8 +12,11 @@ function npm_get_author($post_id) {
     return '';
   }
 
-  $result = "<a href='$html_url'>$name</a>";
-  return "<span class='NpmAuthor-name'>$result</span>";
+  $to_markdown = is_npmawesome_preview();
+
+  return $to_markdown
+    ? "[$name]($html_url)"
+    : "<span class='NpmAuthor-name'><a href='$html_url'>$name</a></span>";
 }
 
 function npm_get_author_photo($post_id, $attrs) {
@@ -23,8 +26,12 @@ function npm_get_author_photo($post_id, $attrs) {
     return '';
   }
 
+  $to_markdown = is_npmawesome_preview();
   $result = "<img src=\"$avatar_url\" $attrs/>";
-  return "<span class=\"NpmAuthor-photo\">$result</span>";
+
+  return $to_markdown
+    ? $result
+    : "<span class=\"NpmAuthor-photo\">$result</span>";
 }
 
 function npm_author_shortcode($atts) {

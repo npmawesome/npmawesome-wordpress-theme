@@ -3,6 +3,10 @@
 [partner name]
 */
 function npm_partner_shortcode($atts) {
+  if(is_npmawesome_preview()) {
+    return '';
+  }
+
   if(!is_array($atts)) {
     $atts = [];
   }
