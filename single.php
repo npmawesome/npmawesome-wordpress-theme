@@ -9,7 +9,7 @@ if(is_npmawesome_preview()) {
   while(have_posts()) {
     the_post();
     $content = get_post_field('post_content_filtered');
-    echo "<pre>".htmlspecialchars(do_shortcode($content));
+    echo "<pre>".str_replace('<', '&lt;', do_shortcode($content));
   }
   return;
 }
