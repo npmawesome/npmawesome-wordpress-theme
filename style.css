@@ -1568,6 +1568,7 @@ a:hover {
   width: calc(100% - 80px);
   border-radius: 4px;
 }
+.Post .with-shadow table,
 .Post table.with-shadow {
   margin: 30px 40px 60px 40px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
